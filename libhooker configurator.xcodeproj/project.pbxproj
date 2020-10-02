@@ -13,6 +13,8 @@
 		F142F03A2522A75600EB0A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F0392522A75600EB0A20 /* Assets.xcassets */; };
 		F142F03D2522A75600EB0A20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */; };
 		F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */; };
+		F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0472525003B00EB0A20 /* TweakConfiguration.swift */; };
+		F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F04A2526C61400EB0A20 /* ProcessList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F142F03F2522A75600EB0A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F142F0412522A75600EB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F142F0472525003B00EB0A20 /* TweakConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakConfiguration.swift; sourceTree = "<group>"; };
+		F142F04A2526C61400EB0A20 /* ProcessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
 				F142F0352522A75500EB0A20 /* SceneDelegate.swift */,
 				F142F0372522A75500EB0A20 /* ContentView.swift */,
+				F142F0472525003B00EB0A20 /* TweakConfiguration.swift */,
+				F142F04A2526C61400EB0A20 /* ProcessList.swift */,
 				F142F0392522A75600EB0A20 /* Assets.xcassets */,
 				F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */,
 				F142F0412522A75600EB0A20 /* Info.plist */,
@@ -146,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
 				F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */,
 				F142F0382522A75500EB0A20 /* ContentView.swift in Sources */,
+				F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +296,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
