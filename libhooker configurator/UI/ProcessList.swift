@@ -22,10 +22,10 @@ struct LaunchService: Hashable {
                                            path: "",
                                            bundle: "com.apple.SpringBoard")
     static let empty = LaunchService(name: "Default Configuration",
-                                       path: "",
-                                       bundle: "")
+                                     path: "",
+                                     bundle: "")
     
-    func hash(into hasher: inout Hasher){
+    func hash(into hasher: inout Hasher) {
         hasher.combine(path)
         hasher.combine(bundle)
     }
@@ -42,15 +42,13 @@ struct ServiceList: View {
             return "Applications"
         case .daemons:
             return "Daemons"
-        default:
-            return "Services"
         }
     }
     
     var body: some View {
         Form {
-            Section() {
-                ForEach(services, id: \.self){ service in
+            Section {
+                ForEach(services, id: \.self) { service in
                     NavigationLink(destination: TweakConfiguration(launchService: service)) {
                         Text(service.name)
                     }
@@ -61,7 +59,7 @@ struct ServiceList: View {
         .navigationBarTitle(Text(navTitle), displayMode: .inline)
     }
     
-    private func fetch(){
+    private func fetch() {
         self.services = [
             LaunchService.SpringBoard,
             LaunchService(name: "Safari", path: "", bundle: "com.apple.MobileSafari")

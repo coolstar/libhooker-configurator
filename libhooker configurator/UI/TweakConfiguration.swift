@@ -26,27 +26,27 @@ struct TweakConfiguration: View {
     
     var body: some View {
         Form {
-            Section() {
-                Toggle(isOn: $enableTweaks){
+            Section {
+                Toggle(isOn: $enableTweaks) {
                     Text("Enable Tweaks")
                 }
             }
             if enableTweaks {
-                Section() {
-                    Toggle(isOn: $customConfig){
+                Section {
+                    Toggle(isOn: $customConfig) {
                         Text("Override Configuration")
                     }
                     if customConfig {
-                        Picker(selection: $allowDeny, label: EmptyView()){
+                        Picker(selection: $allowDeny, label: EmptyView()) {
                             Text("Allow").tag(0)
                             Text("Deny").tag(1)
                         }.pickerStyle(SegmentedPickerStyle())
                     }
                 }
                 if customConfig {
-                    Section(){
+                    Section {
                         ForEach(tweaksList.indices) { idx in
-                            Toggle(isOn: self.$tweaksList[idx].state){
+                            Toggle(isOn: self.$tweaksList[idx].state) {
                                 Text(self.tweaksList[idx].name)
                             }
                         }

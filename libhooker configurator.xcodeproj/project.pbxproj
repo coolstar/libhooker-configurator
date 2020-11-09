@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1282B0D2559FCC10050043B /* Binding+Update.swift */; };
 		F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0332522A75500EB0A20 /* AppDelegate.swift */; };
 		F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0352522A75500EB0A20 /* SceneDelegate.swift */; };
 		F142F0382522A75500EB0A20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0372522A75500EB0A20 /* ContentView.swift */; };
@@ -15,9 +16,11 @@
 		F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */; };
 		F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0472525003B00EB0A20 /* TweakConfiguration.swift */; };
 		F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F04A2526C61400EB0A20 /* ProcessList.swift */; };
+		F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1282B0D2559FCC10050043B /* Binding+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Update.swift"; sourceTree = "<group>"; };
 		F142F0302522A75500EB0A20 /* libhooker configurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "libhooker configurator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F142F0352522A75500EB0A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		F142F0412522A75600EB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F142F0472525003B00EB0A20 /* TweakConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakConfiguration.swift; sourceTree = "<group>"; };
 		F142F04A2526C61400EB0A20 /* ProcessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessList.swift; sourceTree = "<group>"; };
+		F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,8 @@
 		F142F0322522A75500EB0A20 /* libhooker configurator */ = {
 			isa = PBXGroup;
 			children = (
-				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
-				F142F0352522A75500EB0A20 /* SceneDelegate.swift */,
-				F142F0372522A75500EB0A20 /* ContentView.swift */,
-				F142F0472525003B00EB0A20 /* TweakConfiguration.swift */,
-				F142F04A2526C61400EB0A20 /* ProcessList.swift */,
+				F1F0FD31253F6B6C001F20EF /* Configs */,
+				F1F0FD30253F6B63001F20EF /* UI */,
 				F142F0392522A75600EB0A20 /* Assets.xcassets */,
 				F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */,
 				F142F0412522A75600EB0A20 /* Info.plist */,
@@ -81,6 +82,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F1F0FD30253F6B63001F20EF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
+				F142F0352522A75500EB0A20 /* SceneDelegate.swift */,
+				F142F0372522A75500EB0A20 /* ContentView.swift */,
+				F142F0472525003B00EB0A20 /* TweakConfiguration.swift */,
+				F142F04A2526C61400EB0A20 /* ProcessList.swift */,
+				F1282B0D2559FCC10050043B /* Binding+Update.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F1F0FD31253F6B6C001F20EF /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +113,7 @@
 				F142F02C2522A75500EB0A20 /* Sources */,
 				F142F02D2522A75500EB0A20 /* Frameworks */,
 				F142F02E2522A75500EB0A20 /* Resources */,
+				F1282B10255A02A30050043B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -147,13 +170,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F1282B10255A02A30050043B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint || true\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F142F02C2522A75500EB0A20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
+				F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
+				F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */,
 				F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */,
 				F142F0382522A75500EB0A20 /* ContentView.swift in Sources */,
 				F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */,

@@ -19,17 +19,24 @@ struct ContentView: View {
 }
 
 struct MasterView: View {
-    @State private var tweaksEnabled = !FileManager.default.fileExists(atPath: "/.disable_tweakInject") {
-        didSet {
-            
-        }
-    }
+    @State private var tweaksEnabled = !FileManager.default.fileExists(atPath: "/.disable_tweakinject")
+    private var tweaksEnabled2 = !FileManager.default.fileExists(atPath: "/.disable_tweakinject")
     
+    func tweaksBinding() -> Binding<Bool> {
+        Binding<Bool>(
+            get: {
+                self.tweaksEnabled != self.tweaksEnabled2
+            },
+            set: { _ in
+                
+            }
+        )
+    }
     @State private var webprocessTweaks = true
     
     var body: some View {
         Form {
-            Section(){
+            Section {
                 HStack {
                     Text("Version")
                     Spacer()
@@ -43,40 +50,42 @@ struct MasterView: View {
                 HStack {
                     Text("iOS")
                     Spacer()
-                    Text("13.5")
+                    Text(DeviceInfo.shared.iOSVersion())
                 }
             }
-            Section(header: Text("Global Configuration")){
+            Section(header: Text("Global Configuration")) {
                 Toggle(isOn: $tweaksEnabled) {
                     Text("Tweaks")
                 }
-                Toggle(isOn: $webprocessTweaks) {
+                Toggle(isOn: $webprocessTweaks.onUpdate {
+                    print("Webprocess update")
+                }) {
                     Text("Allow tweaks in webpages")
                 }
-                NavigationLink(destination: TweakConfiguration(launchService: LaunchService.empty)){
+                NavigationLink(destination: TweakConfiguration(launchService: LaunchService.empty)) {
                     Text("Default Configuration")
                 }
-                Button(action: {
-                    
-                }){
-                    Text("Update Odyssey")
-                }
             }
-            Section(header: Text("Process Configuration")){
-                NavigationLink(destination: TweakConfiguration(launchService: LaunchService.SpringBoard)){
+            Section(header: Text("Process Configuration")) {
+                NavigationLink(destination: TweakConfiguration(launchService: LaunchService.SpringBoard)) {
                     Text("SpringBoard")
                 }
-                NavigationLink(destination: ServiceList(serviceFilter: .apps)){
+                NavigationLink(destination: ServiceList(serviceFilter: .apps)) {
                     Text("Applications")
                 }
-                NavigationLink(destination: ServiceList(serviceFilter: .daemons)){
+                NavigationLink(destination: ServiceList(serviceFilter: .daemons)) {
                     Text("Daemons")
                 }
             }
+        }.alert(isPresented: tweaksBinding()) {
+            Alert(title: Text("Userspace Reboot Required"),
+                  message: Text("A userspace reboot is required to apply changes"),
+                  dismissButton: .default(Text("OK"), action: {
+                print("Do userspace reboot")
+            }))
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
