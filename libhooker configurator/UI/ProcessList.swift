@@ -19,8 +19,8 @@ struct LaunchService: Hashable {
     let bundle: String
     
     static let SpringBoard = LaunchService(name: "SpringBoard",
-                                           path: "",
-                                           bundle: "com.apple.SpringBoard")
+                                           path: "/System/Library/CoreServices/SpringBoard.app/SpringBoard",
+                                           bundle: "")
     static let empty = LaunchService(name: "Default Configuration",
                                      path: "",
                                      bundle: "")
@@ -59,10 +59,41 @@ struct ServiceList: View {
         .navigationBarTitle(Text(navTitle), displayMode: .inline)
     }
     
+    private func appHidden(app: LSApplicationProxy) -> Bool {
+        if app.localizedName() == nil {
+            return true
+        }
+        if app.lhIdentifier() == nil {
+            return true
+        }
+        guard let bundleURL = app.bundleURL(),
+            let plistData = try? Data(contentsOf: bundleURL.appendingPathComponent("Info.plist")),
+            let plist = try? PropertyListSerialization.propertyList(from: plistData, options: [], format: nil) as? [String: Any] else {
+                return true
+        }
+        if let tags = plist["SBAppTags"] as? [String],
+            tags.contains("hidden") {
+            return true
+        }
+        if let visibility = plist["SBIconVisibilityDefaultVisible"] as? Bool,
+            !visibility {
+            return true
+        }
+        return false
+    }
+    
     private func fetch() {
-        self.services = [
-            LaunchService.SpringBoard,
-            LaunchService(name: "Safari", path: "", bundle: "com.apple.MobileSafari")
-        ]
+        if self.serviceFilter == .apps {
+            let apps = LSApplicationWorkspace.default().allInstalledApplications()
+            self.services = apps.filter({ !self.appHidden(app: $0) }).map({
+                LaunchService(name: $0.localizedName() ?? "",
+                              path: "",
+                              bundle: $0.lhIdentifier() ?? "")
+            }).sorted(by: { $0.name.compare($1.name) == .orderedAscending })
+        } else {
+            let servicesList = launchdList()
+            self.services = servicesList.map({ LaunchService(name: $0[0], path: $0[1], bundle: "") })
+                .sorted(by: { $0.name.compare($1.name) == .orderedAscending })
+        }
     }
 }

@@ -16,12 +16,23 @@
 		F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */; };
 		F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0472525003B00EB0A20 /* TweakConfiguration.swift */; };
 		F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F04A2526C61400EB0A20 /* ProcessList.swift */; };
+		F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71625BFC8AE006FF2E6 /* launchd-list.m */; };
+		F16EE71925BFDDBB006FF2E6 /* CoreServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71825BFDDBB006FF2E6 /* CoreServices.m */; };
+		F16EE71D25C00F6F006FF2E6 /* PopSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */; };
+		F16EE72025C01110006FF2E6 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71F25C01110006FF2E6 /* Actions.swift */; };
+		F16EE73025C02154006FF2E6 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72725C02154006FF2E6 /* Package.swift */; };
+		F16EE73125C02154006FF2E6 /* String-TrimLeadingWhitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72925C02154006FF2E6 /* String-TrimLeadingWhitespace.swift */; };
+		F16EE73225C02154006FF2E6 /* PackageListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72B25C02154006FF2E6 /* PackageListManager.swift */; };
+		F16EE73325C02154006FF2E6 /* ControlFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72D25C02154006FF2E6 /* ControlFileParser.swift */; };
+		F16EE73425C02154006FF2E6 /* DpkgWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72F25C02154006FF2E6 /* DpkgWrapper.swift */; };
+		F16EE73A25C037E0006FF2E6 /* mountData.c in Sources */ = {isa = PBXBuildFile; fileRef = F16EE73925C037E0006FF2E6 /* mountData.c */; };
+		F16EE73F25C0EF6B006FF2E6 /* LHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE73E25C0EF6B006FF2E6 /* LHUserDefaults.swift */; };
 		F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1282B0D2559FCC10050043B /* Binding+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Update.swift"; sourceTree = "<group>"; };
-		F142F0302522A75500EB0A20 /* libhooker configurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "libhooker configurator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F142F0302522A75500EB0A20 /* libhooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libhooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F142F0352522A75500EB0A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F142F0372522A75500EB0A20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,6 +42,21 @@
 		F142F0412522A75600EB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F142F0472525003B00EB0A20 /* TweakConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakConfiguration.swift; sourceTree = "<group>"; };
 		F142F04A2526C61400EB0A20 /* ProcessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessList.swift; sourceTree = "<group>"; };
+		F16EE71425BFC8AD006FF2E6 /* libhooker configurator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libhooker configurator-Bridging-Header.h"; sourceTree = "<group>"; };
+		F16EE71525BFC8AE006FF2E6 /* launchd-list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "launchd-list.h"; sourceTree = "<group>"; };
+		F16EE71625BFC8AE006FF2E6 /* launchd-list.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "launchd-list.m"; sourceTree = "<group>"; };
+		F16EE71825BFDDBB006FF2E6 /* CoreServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreServices.m; sourceTree = "<group>"; };
+		F16EE71A25BFDDCA006FF2E6 /* CoreServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreServices.h; sourceTree = "<group>"; };
+		F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSheet.swift; sourceTree = "<group>"; };
+		F16EE71F25C01110006FF2E6 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		F16EE72725C02154006FF2E6 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		F16EE72925C02154006FF2E6 /* String-TrimLeadingWhitespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-TrimLeadingWhitespace.swift"; sourceTree = "<group>"; };
+		F16EE72B25C02154006FF2E6 /* PackageListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageListManager.swift; sourceTree = "<group>"; };
+		F16EE72D25C02154006FF2E6 /* ControlFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFileParser.swift; sourceTree = "<group>"; };
+		F16EE72F25C02154006FF2E6 /* DpkgWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DpkgWrapper.swift; sourceTree = "<group>"; };
+		F16EE73825C037E0006FF2E6 /* mountData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mountData.h; sourceTree = "<group>"; };
+		F16EE73925C037E0006FF2E6 /* mountData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mountData.c; sourceTree = "<group>"; };
+		F16EE73E25C0EF6B006FF2E6 /* LHUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHUserDefaults.swift; sourceTree = "<group>"; };
 		F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +82,7 @@
 		F142F0312522A75500EB0A20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F142F0302522A75500EB0A20 /* libhooker configurator.app */,
+				F142F0302522A75500EB0A20 /* libhooker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,8 +90,12 @@
 		F142F0322522A75500EB0A20 /* libhooker configurator */ = {
 			isa = PBXGroup;
 			children = (
+				F16EE72525C02154006FF2E6 /* Sileo Backend */,
+				F16EE71E25C01103006FF2E6 /* Backend-Actions */,
+				F16EE71325BFC896006FF2E6 /* Data Providers */,
 				F1F0FD31253F6B6C001F20EF /* Configs */,
 				F1F0FD30253F6B63001F20EF /* UI */,
+				F16EE71425BFC8AD006FF2E6 /* libhooker configurator-Bridging-Header.h */,
 				F142F0392522A75600EB0A20 /* Assets.xcassets */,
 				F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */,
 				F142F0412522A75600EB0A20 /* Info.plist */,
@@ -82,9 +112,115 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F16EE71325BFC896006FF2E6 /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE73B25C0EE35006FF2E6 /* launchd */,
+				F16EE73C25C0EE41006FF2E6 /* CoreServices */,
+				F16EE73D25C0EE48006FF2E6 /* mounts */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		F16EE71B25C00F64006FF2E6 /* BugFix-13 */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */,
+			);
+			path = "BugFix-13";
+			sourceTree = "<group>";
+		};
+		F16EE71E25C01103006FF2E6 /* Backend-Actions */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE71F25C01110006FF2E6 /* Actions.swift */,
+			);
+			path = "Backend-Actions";
+			sourceTree = "<group>";
+		};
+		F16EE72525C02154006FF2E6 /* Sileo Backend */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72625C02154006FF2E6 /* Objects */,
+				F16EE72825C02154006FF2E6 /* Extensions */,
+				F16EE72A25C02154006FF2E6 /* Package Manager */,
+				F16EE72C25C02154006FF2E6 /* Control File Parser */,
+				F16EE72E25C02154006FF2E6 /* DPKG Wrapper */,
+			);
+			path = "Sileo Backend";
+			sourceTree = "<group>";
+		};
+		F16EE72625C02154006FF2E6 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72725C02154006FF2E6 /* Package.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		F16EE72825C02154006FF2E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72925C02154006FF2E6 /* String-TrimLeadingWhitespace.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F16EE72A25C02154006FF2E6 /* Package Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72B25C02154006FF2E6 /* PackageListManager.swift */,
+			);
+			path = "Package Manager";
+			sourceTree = "<group>";
+		};
+		F16EE72C25C02154006FF2E6 /* Control File Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72D25C02154006FF2E6 /* ControlFileParser.swift */,
+			);
+			path = "Control File Parser";
+			sourceTree = "<group>";
+		};
+		F16EE72E25C02154006FF2E6 /* DPKG Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE72F25C02154006FF2E6 /* DpkgWrapper.swift */,
+			);
+			path = "DPKG Wrapper";
+			sourceTree = "<group>";
+		};
+		F16EE73B25C0EE35006FF2E6 /* launchd */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE71525BFC8AE006FF2E6 /* launchd-list.h */,
+				F16EE71625BFC8AE006FF2E6 /* launchd-list.m */,
+			);
+			path = launchd;
+			sourceTree = "<group>";
+		};
+		F16EE73C25C0EE41006FF2E6 /* CoreServices */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE71A25BFDDCA006FF2E6 /* CoreServices.h */,
+				F16EE71825BFDDBB006FF2E6 /* CoreServices.m */,
+			);
+			path = CoreServices;
+			sourceTree = "<group>";
+		};
+		F16EE73D25C0EE48006FF2E6 /* mounts */ = {
+			isa = PBXGroup;
+			children = (
+				F16EE73825C037E0006FF2E6 /* mountData.h */,
+				F16EE73925C037E0006FF2E6 /* mountData.c */,
+			);
+			path = mounts;
+			sourceTree = "<group>";
+		};
 		F1F0FD30253F6B63001F20EF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F16EE71B25C00F64006FF2E6 /* BugFix-13 */,
 				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
 				F142F0352522A75500EB0A20 /* SceneDelegate.swift */,
 				F142F0372522A75500EB0A20 /* ContentView.swift */,
@@ -99,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F0FD32253F6B77001F20EF /* DeviceInfo.swift */,
+				F16EE73E25C0EF6B006FF2E6 /* LHUserDefaults.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -121,7 +258,7 @@
 			);
 			name = "libhooker configurator";
 			productName = "libhooker configurator";
-			productReference = F142F0302522A75500EB0A20 /* libhooker configurator.app */;
+			productReference = F142F0302522A75500EB0A20 /* libhooker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,6 +273,7 @@
 				TargetAttributes = {
 					F142F02F2522A75500EB0A20 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -195,13 +333,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16EE73325C02154006FF2E6 /* ControlFileParser.swift in Sources */,
+				F16EE73A25C037E0006FF2E6 /* mountData.c in Sources */,
+				F16EE73125C02154006FF2E6 /* String-TrimLeadingWhitespace.swift in Sources */,
+				F16EE73425C02154006FF2E6 /* DpkgWrapper.swift in Sources */,
 				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
 				F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
+				F16EE71D25C00F6F006FF2E6 /* PopSheet.swift in Sources */,
 				F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */,
+				F16EE72025C01110006FF2E6 /* Actions.swift in Sources */,
+				F16EE73F25C0EF6B006FF2E6 /* LHUserDefaults.swift in Sources */,
 				F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */,
 				F142F0382522A75500EB0A20 /* ContentView.swift in Sources */,
 				F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */,
+				F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */,
+				F16EE71925BFDDBB006FF2E6 /* CoreServices.m in Sources */,
+				F16EE73025C02154006FF2E6 /* Package.swift in Sources */,
+				F16EE73225C02154006FF2E6 /* PackageListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,9 +486,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -347,7 +498,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = libhooker;
+				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,9 +510,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,7 +522,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = libhooker;
+				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
