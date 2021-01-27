@@ -18,10 +18,10 @@ struct LaunchService: Hashable {
     let path: String
     let bundle: String
     
-    static let SpringBoard = LaunchService(name: "SpringBoard",
+    static let SpringBoard = LaunchService(name: NSLocalizedString("SpringBoard", comment: ""),
                                            path: "/System/Library/CoreServices/SpringBoard.app/SpringBoard",
                                            bundle: "")
-    static let empty = LaunchService(name: "Default Configuration",
+    static let empty = LaunchService(name: NSLocalizedString("Default Configuration", comment: ""),
                                      path: "",
                                      bundle: "")
     
@@ -39,9 +39,9 @@ struct ServiceList: View {
     private var navTitle: String {
         switch serviceFilter {
         case .apps:
-            return "Applications"
+            return NSLocalizedString("Applications", comment: "")
         case .daemons:
-            return "Daemons"
+            return NSLocalizedString("Daemons", comment: "")
         }
     }
     
