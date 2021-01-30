@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC3381FF25C112F60090BB3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC33820125C112F60090BB3C /* Localizable.strings */; };
+		F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */; };
 		F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1282B0D2559FCC10050043B /* Binding+Update.swift */; };
 		F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0332522A75500EB0A20 /* AppDelegate.swift */; };
 		F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0352522A75500EB0A20 /* SceneDelegate.swift */; };
@@ -37,6 +38,7 @@
 		BC33820625C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BC33820825C125780090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BC33820925C1258D0090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedHelpers.swift"; sourceTree = "<group>"; };
 		F1282B0D2559FCC10050043B /* Binding+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Update.swift"; sourceTree = "<group>"; };
 		F142F0302522A75500EB0A20 /* libhooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libhooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				F142F0472525003B00EB0A20 /* TweakConfiguration.swift */,
 				F142F04A2526C61400EB0A20 /* ProcessList.swift */,
 				F1282B0D2559FCC10050043B /* Binding+Update.swift */,
+				F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */,
 				BC33820125C112F60090BB3C /* Localizable.strings */,
 			);
 			path = UI;
@@ -350,6 +353,7 @@
 				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
 				F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
+				F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */,
 				F16EE71D25C00F6F006FF2E6 /* PopSheet.swift in Sources */,
 				F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */,
 				F16EE72025C01110006FF2E6 /* Actions.swift in Sources */,
