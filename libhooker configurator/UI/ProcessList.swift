@@ -83,17 +83,26 @@ struct ServiceList: View {
     }
     
     private func fetch() {
-        if self.serviceFilter == .apps {
-            let apps = LSApplicationWorkspace.default().allInstalledApplications()
-            self.services = apps.filter({ !self.appHidden(app: $0) }).map({
-                LaunchService(name: $0.localizedName() ?? "",
-                              path: "",
-                              bundle: $0.lhIdentifier() ?? "")
-            }).sorted(by: { $0.name.compare($1.name) == .orderedAscending })
-        } else {
-            let servicesList = launchdList()
-            self.services = servicesList.map({ LaunchService(name: $0[0], path: $0[1], bundle: "") })
-                .sorted(by: { $0.name.compare($1.name) == .orderedAscending })
+        DispatchQueue.global(qos: .userInitiated).async {
+            if self.serviceFilter == .apps {
+                let apps = LSApplicationWorkspace.default().allInstalledApplications()
+                let services = apps.filter({ !self.appHidden(app: $0) }).map({
+                    LaunchService(name: $0.localizedName() ?? "",
+                                  path: "",
+                                  bundle: $0.lhIdentifier() ?? "")
+                }).sorted(by: { $0.name.compare($1.name) == .orderedAscending })
+                DispatchQueue.main.async {
+                    self.services = services
+                }
+
+            } else {
+                let servicesList = launchdList()
+                let services = servicesList.map({ LaunchService(name: $0[0], path: $0[1], bundle: "") })
+                    .sorted(by: { $0.name.compare($1.name) == .orderedAscending })
+                DispatchQueue.main.async {
+                    self.services = services
+                }
+            }
         }
     }
 }
