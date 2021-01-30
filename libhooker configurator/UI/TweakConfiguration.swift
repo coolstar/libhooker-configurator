@@ -94,7 +94,8 @@ struct TweakConfiguration: View {
         #if targetEnvironment(simulator)
         let rawTweaksList = ["Test1.dylib", "Test2.dylib"]
         #else
-        let rawTweaksList: [String] = (try? FileManager.default.contentsOfDirectory(atPath: "/usr/lib/TweakInject"))?.filter({ $0.hasSuffix(".dylib") }) ?? []
+        let rawTweaksList: [String] = (try? FileManager.default.contentsOfDirectory(atPath: "/usr/lib/TweakInject"))?
+            .filter({ $0.hasSuffix(".dylib") }) ?? []
         #endif
         
         var tweaks: [String: Bool] = [:]
