@@ -8,21 +8,21 @@
 
 import SwiftUI
 import Combine
-
+//NSLocalizedString("Respring", comment: "")
 struct ContentView: View {
     @State var showApplySheet = false
     var body: some View {
         NavigationView {
             MainView()
-                .navigationBarTitle(Text("libhooker"))
-                .navigationBarItems(trailing: Button("Apply") {
+                .navigationBarTitle(Text(NSLocalizedString("libhooker", comment: "")))
+                .navigationBarItems(trailing: Button((NSLocalizedString("Apply", comment: ""))) {
                     self.showApplySheet = true
                 }.popSheet(isPresented: $showApplySheet) {
-                    PopSheet(title: Text("Apply Changes"), message: nil, buttons: [
-                        .default(Text("Respring")) {
+                    PopSheet(title: Text(NSLocalizedString("Apply Changes", comment: "")), message: nil, buttons: [
+                        .default(Text(NSLocalizedString("Respring", comment: ""))) {
                             respring()
                         },
-                        .destructive(Text(userspaceRebootSupported() ? "Reboot Userspace" : "ldRestart")) {
+                        .destructive(Text(userspaceRebootSupported() ? NSLocalizedString("Reboot Userspace", comment: "") : NSLocalizedString("ldRestart", comment: ""))) {
                             userspaceReboot()
                         },
                         .cancel()
@@ -56,30 +56,30 @@ struct MainView: View {
         Form {
             Section {
                 HStack {
-                    Text("Version")
+                    Text(NSLocalizedString("Version", comment: ""))
                     Spacer()
                     Text(DeviceInfo.shared.libhookerVersion())
                 }
                 HStack {
-                    Text("Jailbreak")
+                    Text(NSLocalizedString("Jailbreak", comment: ""))
                     Spacer()
                     Text(jailbreakVersion)
                 }
                 HStack {
-                    Text("iOS")
+                    Text(NSLocalizedString("iOS", comment: ""))
                     Spacer()
                     Text(DeviceInfo.shared.iOSVersion())
                 }
             }
-            Section(header: Text("Global Configuration")) {
+            Section(header: Text(NSLocalizedString("Global Configuration", comment: ""))) {
                 Toggle(isOn: $tweaksEnabled.onUpdate {
                     self.updateTweaksEnabled()
                 }) {
-                    Text("Tweaks")
+                    Text(NSLocalizedString("Tweaks", comment: ""))
                 }.alert(isPresented: tweaksBinding()) {
-                    Alert(title: Text("\(userspaceRebootSupported() ? "Userspace Reboot" : "LDRestart") Required"),
-                          message: Text("\(userspaceRebootSupported() ? "A userspace reboot" : "An ldrestart") is required to apply changes"),
-                          dismissButton: .default(Text("OK"), action: {
+                    Alert(title: Text("\(userspaceRebootSupported() ? NSLocalizedString("Userspace Reboot", comment: "") : NSLocalizedString("LDRestart", comment: ""))" + NSLocalizedString("Required", comment: "")),
+                          message: Text("\(userspaceRebootSupported() ? NSLocalizedString("A userspace reboot", comment: "") : NSLocalizedString("An ldrestart", comment: ""))" + NSLocalizedString("is required to apply changes", comment: "")),
+                          dismissButton: .default(Text(NSLocalizedString("OK", comment: "")), action: {
                             userspaceReboot()
                           }))
                 }
@@ -87,32 +87,32 @@ struct MainView: View {
                     LHUserDefaults.standard.set(self.webProcessTweaks, forKey: "webProcessTweaks")
                     LHUserDefaults.standard.synchronize()
                 }) {
-                    Text("Allow tweaks in webpages")
+                    Text(NSLocalizedString("Allow tweaks in webpages", comment: ""))
                 }
                 NavigationLink(destination: TweakConfiguration(launchService: LaunchService.empty)) {
-                    Text("Default Configuration")
+                    Text(NSLocalizedString("Default Configuration", comment: ""))
                 }
                 Button(action: { self.showReset = true }) {
-                    Text("Reset Configuration")
+                    Text(NSLocalizedString("Reset Configuration", comment: ""))
                 }.foregroundColor(.red).alert(isPresented: $showReset) {
-                    Alert(title: Text("Reset Configuration"),
-                          message: Text("Tweak configurations for all processes will be reset"),
-                          primaryButton: .default(Text("Yes"), action: {
+                    Alert(title: Text(NSLocalizedString("Reset Configuration", comment: "")),
+                          message: Text(NSLocalizedString("Tweak configurations for all processes will be reset", comment: "")),
+                          primaryButton: .default(Text(NSLocalizedString("Yes", comment: "")), action: {
                             LHUserDefaults.standard.set(nil, forKey: "tweakconfigs")
                             LHUserDefaults.standard.synchronize()
                           }),
-                          secondaryButton: .cancel(Text("No")))
+                          secondaryButton: .cancel(Text(NSLocalizedString("No", comment: ""))))
                 }
             }
-            Section(header: Text("Process Configuration")) {
+            Section(header: Text(NSLocalizedString("Process Configuration", comment: ""))) {
                 NavigationLink(destination: TweakConfiguration(launchService: LaunchService.SpringBoard)) {
-                    Text("SpringBoard")
+                    Text(NSLocalizedString("SpringBoard", comment: ""))
                 }
                 NavigationLink(destination: ServiceList(serviceFilter: .apps)) {
-                    Text("Applications")
+                    Text(NSLocalizedString("Applications", comment: ""))
                 }
                 NavigationLink(destination: ServiceList(serviceFilter: .daemons)) {
-                    Text("Daemons")
+                    Text(NSLocalizedString("Daemons", comment: ""))
                 }
             }
         }.onAppear(perform: {
