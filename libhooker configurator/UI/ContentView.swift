@@ -89,6 +89,9 @@ struct MainView: View {
                 }) {
                     Text(String(localizationKey: "Allow tweaks in webpages"))
                 }
+                NavigationLink(destination: TweakCompatibility()) {
+                    Text(String(localizationKey: "Tweak Compatibility"))
+                }
                 NavigationLink(destination: TweakConfiguration(launchService: LaunchService.empty)) {
                     Text(String(localizationKey: "Default Configuration"))
                 }
@@ -99,6 +102,7 @@ struct MainView: View {
                           message: Text(String(localizationKey: "Tweak configurations for all processes will be reset")),
                           primaryButton: .default(Text(String(localizationKey: "Yes")), action: {
                             LHUserDefaults.standard.set(nil, forKey: "tweakconfigs")
+                            LHUserDefaults.standard.set(nil, forKey: "memPrefs")
                             LHUserDefaults.standard.synchronize()
                           }),
                           secondaryButton: .cancel(Text(String(localizationKey: "No"))))
