@@ -29,18 +29,18 @@ struct TweakConfiguration: View {
         Form {
             Section {
                 Toggle(isOn: $enableTweaks.onUpdate { self.save() }) {
-                    Text(NSLocalizedString("Enable Tweaks", comment: ""))
+                    Text(String(localizationKey: "Enable Tweaks"))
                 }
             }
             if enableTweaks {
                 Section {
                     Toggle(isOn: $customConfig.onUpdate { self.save() }) {
-                        Text(NSLocalizedString("Override Configuration", comment: ""))
+                        Text(String(localizationKey: "Override Configuration"))
                     }
                     if customConfig {
                         Picker(selection: $allowDeny.onUpdate { self.save() }, label: EmptyView()) {
-                            Text(NSLocalizedString("Allow", comment: "")).tag(0)
-                            Text(NSLocalizedString("Deny", comment: "")).tag(1)
+                            Text(String(localizationKey: "Allow")).tag(0)
+                            Text(String(localizationKey: "Deny")).tag(1)
                         }.pickerStyle(SegmentedPickerStyle())
                     }
                 }
