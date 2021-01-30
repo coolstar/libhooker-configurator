@@ -96,9 +96,9 @@ public struct PopSheet {
 
         /// Creates an `Alert.Button` that indicates cancellation of some operation.
         public static func cancel(_ action: (() -> Void)? = {}) -> Self {
-            Self(kind: .cancel, label: Text("Cancel"), action: action)
+            Self(kind: .cancel, label: Text(NSLocalizedString("Cancel", comment: "")), action: action)
         }
-
+        
         /// Creates an `Alert.Button` with a style indicating destruction of some data.
         public static func destructive(_ label: Text, action: (() -> Void)? = {}) -> Self {
             Self(kind: .destructive, label: label, action: action)
