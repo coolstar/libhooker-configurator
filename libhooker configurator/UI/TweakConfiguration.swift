@@ -141,3 +141,7 @@ struct TweakConfiguration: View {
         LHUserDefaults.standard.synchronize()
     }
 }
+
+struct TweakConfiguration_Previews: PreviewProvider {
+    static var previews = TweakConfiguration(launchService: LaunchService(name: "", path: "", bundle: ""))
+}
