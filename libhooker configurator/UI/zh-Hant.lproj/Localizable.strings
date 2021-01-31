@@ -34,3 +34,9 @@
 "libhooker" = "libhooker基板設定";
 "is required to apply changes" = "請求做出更改";
 "Required" = "請求";
+// New features
+"libhooker Default" = "libhooker默認模式";
+"Substrate Compatibility" = "Substrate相容模式";
+"Compatibility Mode" = "模式選擇";
+"Enabling substrate compatibility may allow some poorly written / outdated tweaks to work. However, this will increase memory usage." = "啟用substrate相容模式可以讓過時的插件正常工作，但是會增加內存使用量。";
+"Tweak Compatibility" = "插件相容性";
