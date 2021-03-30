@@ -10,8 +10,11 @@
 		BC3381FF25C112F60090BB3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC33820125C112F60090BB3C /* Localizable.strings */; };
 		E1363859261385AE00698D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1363858261385AD00698D55 /* Main.storyboard */; };
 		E136385F2613870F00698D55 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136385E2613870F00698D55 /* RootTableViewController.swift */; };
-		E13638642613881D00698D55 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638632613881D00698D55 /* SettingsSwitchTableViewCell.swift */; };
+		E13638642613881D00698D55 /* CellsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638632613881D00698D55 /* CellsCollection.swift */; };
 		E13638682613885B00698D55 /* UserDefaults+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638672613885B00698D55 /* UserDefaults+Optional.swift */; };
+		E136386C2613A13900698D55 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136386B2613A13900698D55 /* ConfigViewController.swift */; };
+		E13638752613C17200698D55 /* LaunchServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638742613C17200698D55 /* LaunchServiceListView.swift */; };
+		E13638792613C82B00698D55 /* TweakCompatibilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638782613C82B00698D55 /* TweakCompatibilityList.swift */; };
 		F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */; };
 		F110FFF025C6281E00658679 /* TweakCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFEF25C6281E00658679 /* TweakCompatibility.swift */; };
 		F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1282B0D2559FCC10050043B /* Binding+Update.swift */; };
@@ -44,8 +47,11 @@
 		BC33820925C1258D0090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E1363858261385AD00698D55 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E136385E2613870F00698D55 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
-		E13638632613881D00698D55 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		E13638632613881D00698D55 /* CellsCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsCollection.swift; sourceTree = "<group>"; };
 		E13638672613885B00698D55 /* UserDefaults+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Optional.swift"; sourceTree = "<group>"; };
+		E136386B2613A13900698D55 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		E13638742613C17200698D55 /* LaunchServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceListView.swift; sourceTree = "<group>"; };
+		E13638782613C82B00698D55 /* TweakCompatibilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCompatibilityList.swift; sourceTree = "<group>"; };
 		F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedHelpers.swift"; sourceTree = "<group>"; };
 		F110FFEF25C6281E00658679 /* TweakCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakCompatibility.swift; sourceTree = "<group>"; };
 		F1282B0D2559FCC10050043B /* Binding+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Update.swift"; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		E1363862261387F900698D55 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E13638632613881D00698D55 /* SettingsSwitchTableViewCell.swift */,
+				E13638632613881D00698D55 /* CellsCollection.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -273,6 +279,9 @@
 				E136385C2613868500698D55 /* Old SwiftUI Garbage */,
 				BC33820125C112F60090BB3C /* Localizable.strings */,
 				E136385E2613870F00698D55 /* RootTableViewController.swift */,
+				E136386B2613A13900698D55 /* ConfigViewController.swift */,
+				E13638742613C17200698D55 /* LaunchServiceListView.swift */,
+				E13638782613C82B00698D55 /* TweakCompatibilityList.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -383,11 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E136386C2613A13900698D55 /* ConfigViewController.swift in Sources */,
 				E13638682613885B00698D55 /* UserDefaults+Optional.swift in Sources */,
 				F16EE73325C02154006FF2E6 /* ControlFileParser.swift in Sources */,
 				F16EE73A25C037E0006FF2E6 /* mountData.c in Sources */,
 				F16EE73125C02154006FF2E6 /* String-TrimLeadingWhitespace.swift in Sources */,
 				F16EE73425C02154006FF2E6 /* DpkgWrapper.swift in Sources */,
+				E13638792613C82B00698D55 /* TweakCompatibilityList.swift in Sources */,
 				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
 				F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
@@ -398,7 +409,8 @@
 				F16EE72025C01110006FF2E6 /* Actions.swift in Sources */,
 				F16EE73F25C0EF6B006FF2E6 /* LHUserDefaults.swift in Sources */,
 				F110FFF025C6281E00658679 /* TweakCompatibility.swift in Sources */,
-				E13638642613881D00698D55 /* SettingsSwitchTableViewCell.swift in Sources */,
+				E13638642613881D00698D55 /* CellsCollection.swift in Sources */,
+				E13638752613C17200698D55 /* LaunchServiceListView.swift in Sources */,
 				F142F0382522A75500EB0A20 /* ContentView.swift in Sources */,
 				F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */,
 				F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */,
@@ -565,7 +577,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
@@ -590,7 +602,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/*
 struct TweakConfig {
     let name: String
     var state: Bool
@@ -16,7 +17,7 @@ struct TweakConfig {
         name.split(separator: ".").map(String.init).first ?? name
     }
 }
-
+*/
 struct TweakConfiguration: View {
     @State private var enableTweaks = true
     @State private var customConfig = false

@@ -8,42 +8,13 @@
 
 import SwiftUI
 
-enum LaunchServiceFilter {
-    case apps
-    case daemons
-}
-
-struct LaunchService: Hashable {
-    let name: String
-    let path: String
-    let bundle: String
-    
-    static let SpringBoard = LaunchService(name: String(localizationKey: "SpringBoard"),
-                                           path: "/System/Library/CoreServices/SpringBoard.app/SpringBoard",
-                                           bundle: "")
-    static let empty = LaunchService(name: String(localizationKey: "Default Configuration"),
-                                     path: "",
-                                     bundle: "")
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(path)
-        hasher.combine(bundle)
-    }
-}
 
 struct ServiceList: View {
     @State public var serviceFilter: LaunchServiceFilter
     
     @State public var services: [LaunchService] = []
     
-    private var navTitle: String {
-        switch serviceFilter {
-        case .apps:
-            return String(localizationKey: "Applications")
-        case .daemons:
-            return String(localizationKey: "Daemons")
-        }
-    }
+    
     
     var body: some View {
         Form {
@@ -56,7 +27,6 @@ struct ServiceList: View {
             }
         }
         .onAppear(perform: fetch)
-        .navigationBarTitle(Text(navTitle), displayMode: .inline)
     }
     
     private func appHidden(app: LSApplicationProxy) -> Bool {

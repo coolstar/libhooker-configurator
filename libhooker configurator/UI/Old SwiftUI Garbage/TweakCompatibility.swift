@@ -8,20 +8,6 @@
 
 import SwiftUI
 
-enum CompatibilityMode: Int, CaseIterable {
-    case libhooker = 0
-    case substrate = 1
-}
-
-struct TweakCompatibilityConfig {
-    let name: String
-    var state: CompatibilityMode
-    
-    var humanReadableName: String {
-        name.split(separator: ".").map(String.init).first ?? name
-    }
-}
-
 struct TweakCompatibilitySelection: View {
     @Binding var config: TweakCompatibilityConfig
     var tweakName: String

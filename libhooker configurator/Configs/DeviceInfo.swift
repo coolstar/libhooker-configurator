@@ -50,15 +50,21 @@ public class DeviceInfo {
         guard !detectOdysseyRa1n() else {
             return "Odysseyra1n"
         }
-        let odysseyJbd = "/odyssey/jailbreakd"
-        if FileManager.default.fileExists(atPath: odysseyJbd) {
-            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: odysseyJbd))
-            if let version = getJailbreakVersion(sha1: jbdSHA1) {
-                return "Odyssey \(version)"
-            }
-            return "Odyssey"
+        if FileManager.default.fileExists(atPath: "/odyssey/jailbreakd") {
+            let jailbreak = "Odyssey"
+            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: "/odyssey/jailbreakd"))
+            return jailbreak
+        } else if FileManager.default.fileExists(atPath: "/chimera/jailbreakd") {
+            let jailbreak = "Chimera"
+            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: "/chimera/jailbreakd"))
+            return jailbreak
+        } else if FileManager.default.fileExists(atPath: "/taurine/jailbreakd") {
+            let jailbreak = "Taurine"
+            let jbdSHA1 = shaFile(url: URL(fileURLWithPath: "/taurine/jailbreakd"))
+            return jailbreak
+        } else {
+            return "Unknown"
         }
-        return "Unknown"
         #endif
     }
     
