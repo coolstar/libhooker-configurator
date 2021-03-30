@@ -52,15 +52,15 @@ public class DeviceInfo {
         }
         if FileManager.default.fileExists(atPath: "/odyssey/jailbreakd") {
             let jailbreak = "Odyssey"
-            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: "/odyssey/jailbreakd"))
+            _ = sha1File(url: URL(fileURLWithPath: "/odyssey/jailbreakd"))
             return jailbreak
         } else if FileManager.default.fileExists(atPath: "/chimera/jailbreakd") {
             let jailbreak = "Chimera"
-            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: "/chimera/jailbreakd"))
+            _ = sha1File(url: URL(fileURLWithPath: "/chimera/jailbreakd"))
             return jailbreak
         } else if FileManager.default.fileExists(atPath: "/taurine/jailbreakd") {
             let jailbreak = "Taurine"
-            let jbdSHA1 = shaFile(url: URL(fileURLWithPath: "/taurine/jailbreakd"))
+            _ = sha1File(url: URL(fileURLWithPath: "/taurine/jailbreakd"))
             return jailbreak
         } else {
             return "Unknown"
