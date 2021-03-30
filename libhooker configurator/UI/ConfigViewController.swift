@@ -30,12 +30,12 @@ class ConfigViewController: UITableViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         self.tableView.reloadData()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = launchService?.name
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
         self.fetch()
     }
    

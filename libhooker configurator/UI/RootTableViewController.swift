@@ -14,6 +14,7 @@ class RootTableViewController: BaseTableViewController {
         super.viewDidLoad()
         
         self.title = String(localizationKey: "libhooker")
+        navigationItem.largeTitleDisplayMode = .automatic
         let item = UIBarButtonItem(title: String(localizationKey: "Apply"), style: .done, target: self, action: #selector(showAlert))
         self.navigationItem.rightBarButtonItem = item
     }
@@ -32,11 +33,6 @@ class RootTableViewController: BaseTableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         3
     }

@@ -39,7 +39,7 @@ class LaunchServiceListView: BaseTableViewController {
             self.tableView.reloadData()
         }
     }
-    
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         self.tableView.reloadData()
@@ -59,7 +59,7 @@ class LaunchServiceListView: BaseTableViewController {
         super.viewDidLoad()
 
         self.title = navTitle
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
         self.fetch()
     }
     

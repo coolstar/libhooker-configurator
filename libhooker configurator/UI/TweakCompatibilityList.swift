@@ -35,15 +35,13 @@ class TweakCompatibilityList: BaseTableViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         self.tableView.reloadData()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = String(localizationKey: "Tweak Compatibiltiy")
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -135,11 +133,10 @@ class CompatibilitySelectView: BaseTableViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         self.tableView.reloadData()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
