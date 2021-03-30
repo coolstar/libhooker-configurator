@@ -17,6 +17,11 @@ class RootTableViewController: BaseTableViewController {
         let item = UIBarButtonItem(title: String(localizationKey: "Apply"), style: .done, target: self, action: #selector(showAlert))
         self.navigationItem.rightBarButtonItem = item
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.tableView.reloadData()
+    }
 
     @objc private func showAlert() {
         let alert = UIAlertController(title: String(localizationKey: "Apply Changes"), message: nil, preferredStyle: .actionSheet)
@@ -49,17 +54,20 @@ class RootTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = self.reusableCell(withStyle: .value1, reuseIdentifier: "ValueCell")
-            cell.backgroundColor = .systemGray6
+            cell.backgroundColor = ThemeManager.backgroundColour
             cell.selectionStyle = .none
             if indexPath.row == 0 {
                 cell.textLabel?.text = String(localizationKey: "Version")
                 cell.detailTextLabel?.text = DeviceInfo.shared.libhookerVersion()
+                cell.detailTextLabel?.textColor = ThemeManager.labelColour
             } else if indexPath.row == 1 {
                 cell.textLabel?.text = String(localizationKey: "Jailbreak")
                 cell.detailTextLabel?.text = DeviceInfo.shared.getJailbreakName()
+                cell.detailTextLabel?.textColor = ThemeManager.labelColour
             } else if indexPath.row == 2 {
                 cell.textLabel?.text = String(localizationKey: "iOS")
                 cell.detailTextLabel?.text = DeviceInfo.shared.iOSVersion()
+                cell.detailTextLabel?.textColor = ThemeManager.labelColour
             }
             return cell
         } else if indexPath.section == 1 {
@@ -68,38 +76,38 @@ class RootTableViewController: BaseTableViewController {
                 let cell = TweaksEnabledSwitch()
                 cell.textLabel?.text = String(localizationKey: "Tweaks")
                 cell.presentVC = self
-                cell.textLabel?.textColor = .label
+                cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.accessoryType = .none
-                cell.backgroundColor = .systemGray6
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 1:
                 let cell = SettingsSwitchTableViewCell()
                 cell.textLabel?.text = String(localizationKey: "Allow tweaks in webpages")
                 cell.defaultKey = "webProcessTweaks"
-                cell.textLabel?.textColor = .label
+                cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.accessoryType = .none
-                cell.backgroundColor = .systemGray6
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 2:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Tweak Compatibility")
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.textColor = .label
-                cell.backgroundColor = .systemGray6
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 3:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Default Configuration")
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.textColor = .label
-                cell.backgroundColor = .systemGray6
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 4:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Reset Configuration")
                 cell.accessoryType = .none
                 cell.textLabel?.textColor = .systemRed
-                cell.backgroundColor = .systemGray6
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             default: fatalError("You Fucked Up")
             }
@@ -109,22 +117,22 @@ class RootTableViewController: BaseTableViewController {
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "SpringBoard")
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.textColor = .label
-                cell.backgroundColor = .systemGray6
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 1:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Applications")
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.textColor = .label
-                cell.backgroundColor = .systemGray6
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             case 2:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Daemons")
                 cell.accessoryType = .disclosureIndicator
-                cell.textLabel?.textColor = .label
-                cell.backgroundColor = .systemGray6
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             default: fatalError("You Fucked Up")
             }
@@ -146,10 +154,20 @@ class RootTableViewController: BaseTableViewController {
         if indexPath.section == 1 {
             switch indexPath.row {
             case 2:
-                let tweakCompatList = TweakCompatibilityList(style: .insetGrouped)
-                self.navigationController?.pushViewController(tweakCompatList, animated: true)
+                if #available(iOS 13.0, *) {
+                    let tweakCompatList = TweakCompatibilityList(style: .insetGrouped)
+                    self.navigationController?.pushViewController(tweakCompatList, animated: true)
+                } else {
+                    let tweakCompatList = TweakCompatibilityList(style: .grouped)
+                    self.navigationController?.pushViewController(tweakCompatList, animated: true)
+                }
             case 3:
-                let configVC = ConfigViewController(style: .insetGrouped)
+                let configVC: ConfigViewController
+                if #available(iOS 13.0, *) {
+                    configVC = ConfigViewController(style: .insetGrouped)
+                } else {
+                    configVC = ConfigViewController(style: .grouped)
+                }
                 configVC.launchService = LaunchService.empty
                 self.navigationController?.pushViewController(configVC, animated: true)
             case 4:
@@ -169,15 +187,30 @@ class RootTableViewController: BaseTableViewController {
         }
         switch indexPath.row {
         case 0:
-            let configVC = ConfigViewController(style: .insetGrouped)
+            let configVC: ConfigViewController
+            if #available(iOS 13.0, *) {
+                configVC = ConfigViewController(style: .insetGrouped)
+            } else {
+                configVC = ConfigViewController(style: .grouped)
+            }
             configVC.launchService = LaunchService.SpringBoard
             self.navigationController?.pushViewController(configVC, animated: true)
         case 1:
-            let launchListVC = LaunchServiceListView(style: .insetGrouped)
+            let launchListVC: LaunchServiceListView
+            if #available(iOS 13.0, *) {
+                launchListVC = LaunchServiceListView(style: .insetGrouped)
+            } else {
+                launchListVC = LaunchServiceListView(style: .grouped)
+            }
             launchListVC.serviceFilter = .apps
             self.navigationController?.pushViewController(launchListVC, animated: true)
         case 2:
-            let launchListVC = LaunchServiceListView(style: .insetGrouped)
+            let launchListVC: LaunchServiceListView
+            if #available(iOS 13.0, *) {
+                launchListVC = LaunchServiceListView(style: .insetGrouped)
+            } else {
+                launchListVC = LaunchServiceListView(style: .grouped)
+            }
             launchListVC.serviceFilter = .daemons
             self.navigationController?.pushViewController(launchListVC, animated: true)
         default: return

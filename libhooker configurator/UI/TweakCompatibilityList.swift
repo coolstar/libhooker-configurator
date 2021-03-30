@@ -29,7 +29,12 @@ class TweakCompatibilityList: BaseTableViewController {
             self.tableView.reloadData()
         }
     }
-    var names = TweakCompatibilitySelection.names
+    var names = CompatibilitySelectView.names
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +59,19 @@ class TweakCompatibilityList: BaseTableViewController {
         cell.detailTextLabel?.text = self.names[tweaksList[indexPath.row].state.rawValue]
         cell.detailTextLabel?.textColor = .systemBlue
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.textColor = .label
-        cell.backgroundColor = .systemGray6
+        cell.textLabel?.textColor = ThemeManager.labelColour
+        cell.backgroundColor = ThemeManager.backgroundColour
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let csv = CompatibilitySelectView(style: .insetGrouped)
+        let csv: CompatibilitySelectView
+        if #available(iOS 13, *) {
+            csv = CompatibilitySelectView(style: .insetGrouped)
+        } else {
+            csv = CompatibilitySelectView(style: .grouped)
+        }
         csv.config = self.tweaksList[indexPath.row]
         csv.tweakName = self.tweaksList[indexPath.row].humanReadableName
         csv.saveFunc = { config in
@@ -121,6 +131,11 @@ class CompatibilitySelectView: BaseTableViewController {
         String(localizationKey: "Substrate Compatibility")
     ]
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -133,15 +148,15 @@ class CompatibilitySelectView: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
-        cell.textLabel?.text = TweakCompatibilitySelection.names[indexPath.row]
+        cell.textLabel?.text = CompatibilitySelectView.names[indexPath.row]
         if self.config?.state == CompatibilityMode.allCases[indexPath.row] {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
         }
         
-        cell.textLabel?.textColor = .label
-        cell.backgroundColor = .systemGray6
+        cell.textLabel?.textColor = ThemeManager.labelColour
+        cell.backgroundColor = ThemeManager.backgroundColour
         return cell
     }
     

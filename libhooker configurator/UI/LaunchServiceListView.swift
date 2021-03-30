@@ -40,6 +40,11 @@ class LaunchServiceListView: BaseTableViewController {
         }
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.tableView.reloadData()
+    }
+    
     private var navTitle: String {
         switch serviceFilter {
         case .apps:
@@ -70,14 +75,19 @@ class LaunchServiceListView: BaseTableViewController {
         let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
         cell.textLabel?.text = services[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.textColor = .label
-        cell.backgroundColor = .systemGray6
+        cell.textLabel?.textColor = ThemeManager.labelColour
+        cell.backgroundColor = ThemeManager.backgroundColour
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let configVC = ConfigViewController(style: .insetGrouped)
+        let configVC: ConfigViewController
+        if #available(iOS 13.0, *) {
+            configVC = ConfigViewController(style: .insetGrouped)
+        } else {
+            configVC = ConfigViewController(style: .grouped)
+        }
         configVC.launchService = services[indexPath.row]
         self.navigationController?.pushViewController(configVC, animated: true)
     }

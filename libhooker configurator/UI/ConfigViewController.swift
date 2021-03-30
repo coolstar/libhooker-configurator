@@ -17,40 +17,6 @@ struct TweakConfig {
     }
 }
 
-/*
- Form {
-     Section {
-         Toggle(isOn: $enableTweaks.onUpdate { self.save() }) {
-             Text(String(localizationKey: "Enable Tweaks"))
-         }
-     }
-     if enableTweaks {
-         Section {
-             Toggle(isOn: $customConfig.onUpdate { self.save() }) {
-                 Text(String(localizationKey: "Override Configuration"))
-             }
-             if customConfig {
-                 Picker(selection: $allowDeny.onUpdate { self.save() }, label: EmptyView()) {
-                     Text(String(localizationKey: "Allow")).tag(0)
-                     Text(String(localizationKey: "Deny")).tag(1)
-                 }.pickerStyle(SegmentedPickerStyle())
-             }
-         }
-         if customConfig {
-             Section {
-                 ForEach(tweaksList.indices) { idx in
-                     Toggle(isOn: self.$tweaksList[idx].state.onUpdate { self.save() }) {
-                         Text(self.tweaksList[idx].humanReadableName)
-                     }
-                 }
-             }
-         }
-     }
- }
- .navigationBarTitle(Text(launchService.name), displayMode: .inline)
- .onAppear(perform: { self.fetch() })
- */
-
 class ConfigViewController: UITableViewController {
     
     private var enableTweaks = true
@@ -59,6 +25,11 @@ class ConfigViewController: UITableViewController {
     public var launchService: LaunchService?
     
     private var tweaksList: [TweakConfig] = []
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,9 +75,9 @@ class ConfigViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = SettingsSwitchTableViewCell()
             cell.textLabel?.text = String(localizationKey: "Enable Tweaks")
-            cell.textLabel?.textColor = .label
+            cell.textLabel?.textColor = ThemeManager.labelColour
             cell.accessoryType = .none
-            cell.backgroundColor = .systemGray6
+            cell.backgroundColor = ThemeManager.backgroundColour
             cell.control.isOn = enableTweaks
             cell.control.addTarget(self, action: #selector(self.enablePressed(sender:)), for: .valueChanged)
             return cell
@@ -115,9 +86,9 @@ class ConfigViewController: UITableViewController {
             case 0:
                 let cell = SettingsSwitchTableViewCell()
                 cell.textLabel?.text = String(localizationKey: "Override Configuration")
-                cell.textLabel?.textColor = .label
+                cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.accessoryType = .none
-                cell.backgroundColor = .systemGray6
+                cell.backgroundColor = ThemeManager.backgroundColour
                 cell.control.isOn = customConfig
                 cell.control.addTarget(self, action: #selector(self.overrideConfigPressed(sender:)), for: .valueChanged)
                 return cell
@@ -131,7 +102,7 @@ class ConfigViewController: UITableViewController {
                 cell.keys = [String(localizationKey: "Deny"), String(localizationKey: "Allow")]
                 cell.segment.selectedSegmentIndex = allowDeny
                 cell.accessoryType = .none
-                cell.backgroundColor = .systemGray6
+                cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
             default: fatalError("You fucked up")
             }
@@ -144,7 +115,7 @@ class ConfigViewController: UITableViewController {
         }
         cell.textLabel?.text = tweaksList[indexPath.row].humanReadableName
         cell.control.isOn = tweaksList[indexPath.row].state
-        cell.backgroundColor = .systemGray6
+        cell.backgroundColor = ThemeManager.backgroundColour
         return cell
     }
     
