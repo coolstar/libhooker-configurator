@@ -25,7 +25,6 @@ class SettingsSwitchTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.addSubview(control)
         control.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +53,6 @@ class TweaksEnabledSwitch: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.addSubview(control)
         control.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +92,6 @@ class ConfigSwitch: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.addSubview(control)
         control.translatesAutoresizingMaskIntoConstraints = false
@@ -128,7 +125,6 @@ class SegmentedCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = .clear
         self.selectionStyle = .none
         self.contentView.addSubview(segment)
         segment.translatesAutoresizingMaskIntoConstraints = false

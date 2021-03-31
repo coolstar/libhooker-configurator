@@ -139,8 +139,8 @@ class RootTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0: return ""
-        case 1: return "Global Configuration"
-        case 2: return "Process Configuration"
+        case 1: return String(localizationKey: "Global Configuration")
+        case 2: return String(localizationKey: "Process Configuration")
         default: fatalError("You fucked up")
         }
     }
