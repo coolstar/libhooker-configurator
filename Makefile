@@ -34,7 +34,7 @@ LHC_VERSION = $$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" 
 endif
 export PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator"
 LHC_ID   = org.coolstar.libhooker-configurator
-LHC_NAME = libhooker
+LHC_NAME = libhooker-configurator
 LHC_APP  = libhooker.app
 
 LHCTMP = $(TMPDIR)/libhooker
