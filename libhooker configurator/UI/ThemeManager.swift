@@ -21,7 +21,6 @@ class ThemeManager {
     static var backgroundColour: UIColor {
         if #available(iOS 13.0, *) {
             return UIColor(dynamicProvider: { traitCollection in
-                print(traitCollection.userInterfaceStyle == .dark)
                 if traitCollection.userInterfaceStyle == .dark {
                     return .systemGray6
                 } else {
