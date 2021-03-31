@@ -3,7 +3,7 @@ Priority: required
 Section: Packaging
 Maintainer: CoolStar <coolstarorganization@gmail.com>
 Architecture: iphoneos-arm
-Version: 1.1.0
+Version: 1.1.1
 Icon: https://repo.theodyssey.dev/depictions/icons/libhooker.png
 SileoDepiction: https://repo.theodyssey.dev/depictions/json/libhooker-configurator.json
 Depends: org.coolstar.libhooker (>=1.4.0), firmware (>= 13.0)
