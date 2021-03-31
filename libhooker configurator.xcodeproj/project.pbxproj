@@ -529,7 +529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
@@ -554,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
