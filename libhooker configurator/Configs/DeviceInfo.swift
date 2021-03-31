@@ -53,16 +53,19 @@ public class DeviceInfo {
         let odysseyJbd = "/odyssey/jailbreakd"
         let taurineJbd = "/taurine/jailbreakd"
         
+        let jbdSHA1: String
         let jailbreakName: String
         if FileManager.default.fileExists(atPath: odysseyJbd) {
             jailbreakName = "Odyssey"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: odysseyJbd))
         } else if FileManager.default.fileExists(atPath: taurineJbd) {
             jailbreakName = "Taurine"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: taurineJbd))
         } else {
             jailbreakName = "Unknown"
+            jbdSHA1 = ""
         }
         if jailbreakName != "Unknown" {
-            let jbdSHA1 = sha1File(url: URL(fileURLWithPath: odysseyJbd))
             if let version = getJailbreakVersion(sha1: jbdSHA1) {
                 return "\(jailbreakName) \(version)"
             }
