@@ -30,6 +30,19 @@ class RootTableViewController: BaseTableViewController {
         alert.addAction(UIAlertAction(title: userspaceRebootSupported() ? String(localizationKey: "Reboot Userspace") : String(localizationKey: "ldRestart"),
                                       style: .destructive) { _ in userspaceReboot() })
         alert.addAction(UIAlertAction(title: String(localizationKey: "Cancel"), style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            // This is a really hacky workaround, I'm sorry
+            if let navigationBarSubviews = self.navigationController?.navigationBar.subviews {
+                for view in navigationBarSubviews {
+                    if let findClass = NSClassFromString("_UINavigationBarContentView"),
+                        view.isKind(of: findClass),
+                        let barButtonView = self.navigationItem.rightBarButtonItem?.value(forKey: "view") as? UIView {
+                        popoverController.sourceView = barButtonView
+                    }
+                }
+            }
+            popoverController.permittedArrowDirections = [.up] 
+        }
         self.present(alert, animated: true, completion: nil)
     }
     
