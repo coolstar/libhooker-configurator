@@ -73,24 +73,32 @@ class ConfigViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = SettingsSwitchTableViewCell()
+            let cell = ConfigSwitch()
             cell.textLabel?.text = String(localizationKey: "Enable Tweaks")
             cell.textLabel?.textColor = ThemeManager.labelColour
             cell.accessoryType = .none
             cell.backgroundColor = ThemeManager.backgroundColour
             cell.control.isOn = enableTweaks
-            cell.control.addTarget(self, action: #selector(self.enablePressed(sender:)), for: .valueChanged)
+            cell.saveFunc = { state in
+                self.enableTweaks = state
+                self.save()
+                self.tableView.reloadData()
+            }
             return cell
         } else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                let cell = SettingsSwitchTableViewCell()
+                let cell = ConfigSwitch()
                 cell.textLabel?.text = String(localizationKey: "Override Configuration")
                 cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.accessoryType = .none
                 cell.backgroundColor = ThemeManager.backgroundColour
                 cell.control.isOn = customConfig
-                cell.control.addTarget(self, action: #selector(self.overrideConfigPressed(sender:)), for: .valueChanged)
+                cell.saveFunc = { state in
+                    self.customConfig = state
+                    self.save()
+                    self.tableView.reloadData()
+                }
                 return cell
             case 1:
                 let cell = SegmentedCell()
@@ -200,6 +208,7 @@ class ConfigViewController: UITableViewController {
         
         let tweakConfigs = LHUserDefaults.standard.dictionary(forKey: "tweakconfigs") ?? [:]
         let newTweakConfigs = setServiceData(configs: tweakConfigs, config: config)
+        NSLog("\(newTweakConfigs)")
         LHUserDefaults.standard.set(newTweakConfigs, forKey: "tweakconfigs")
         LHUserDefaults.standard.synchronize()
     }

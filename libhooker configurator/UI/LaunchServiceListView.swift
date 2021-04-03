@@ -127,7 +127,6 @@ class LaunchServiceListView: BaseTableViewController {
                 DispatchQueue.main.async {
                     self.services = services
                 }
-
             } else {
                 let servicesList = launchdList()
                 let services = servicesList.map({ LaunchService(name: $0[0], path: $0[1], bundle: "") })
