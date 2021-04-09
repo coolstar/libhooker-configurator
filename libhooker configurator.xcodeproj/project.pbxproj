@@ -35,9 +35,7 @@
 
 /* Begin PBXFileReference section */
 		BC33820025C112F60090BB3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BC33820525C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BC33820625C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		BC33820825C125780090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BC33820925C1258D0090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedHelpers.swift"; sourceTree = "<group>"; };
 		F110FFEF25C6281E00658679 /* TweakCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakCompatibility.swift; sourceTree = "<group>"; };
@@ -388,9 +386,7 @@
 		F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F142F03F2522A75600EB0A20 /* Base */,
-				BC33820525C1134B0090BB3C /* zh-Hant */,
-				BC33820825C125780090BB3C /* zh-Hans */,
+				F142F03F2522A75600EB0A20 /* Base */
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
