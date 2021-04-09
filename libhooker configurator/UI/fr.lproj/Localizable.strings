@@ -1,0 +1,63 @@
+/*
+  Localizable.strings
+  libhooker configurator
+
+  Created by Evan Galli on 2021-04-06.
+  Copyright © 2021 coolstar. All rights reserved.
+*/
+
+"libhooker" = "libhooker";
+
+"Apply" = "Appliquer";
+"Version" = "Version";
+"Jailbreak" = "Jailbreak";
+"iOS" = "iOS";
+
+"Global Configuration" = "Configuration globale";
+"Tweaks" = "Tweaks";
+"Allow tweaks in webpages" = "Autoriser les tweaks dans les webpages";
+"Tweak Compatibility" = "Compatibilité des tweaks";
+"Default Configuration" = "Configuration par défaut";
+"Reset Configuration" = "Réinitialiser la configuration";
+
+"Process Configuration" = "Configuration des processus";
+"SpringBoard" = "SpringBoard";
+"Applications" = "Applications";
+"Daemons" = "Daemons";
+
+
+// Menu: Tweak compatibility
+"Compatibility Mode" = "Mode de compatibilité";
+"libhooker Default" = "Libhooker (par défaut)";
+"Substrate Compatibility" = "Substrate (compatibilité)";
+"Enabling substrate compatibility may allow some poorly written / outdated tweaks to work. However, this will increase memory usage." = "L'activation de la compatibilité avec Substrate peut permettre le fonctionnement de certains tweaks mal écrits ou désuets. En revanche, cela augmentera l'utilisation de la mémoire.";
+
+
+// Menu: Default configuration
+"Enable Tweaks" = "Activer les tweaks";
+"Override Configuration" = "Outrepasser la configuration";
+"Allow" = "Liste blanche";
+"Deny" = "Liste noire";
+
+
+// Alert: Apply 
+"Apply Changes" = "Appliquer les modifications";
+"Respring" = "Relancer le SpringBoard";
+"ldRestart" = "ldRestart";
+"LDRestart" = "LDRestart";
+"Reboot Userspace" = "Redémarrez l'userspace";
+"Cancel" = "Annuler";
+
+
+// Alert: Reset configuration
+"Tweak configurations for all processes will be reset" = "Les configurations des tweaks pour tous les processus seront réinitialisées.";
+"Yes" = "Oui";
+"No" = "Non";
+
+
+// Alert: Something required
+"Required" = "requis";
+"An ldrestart" = "Un ldrestart";
+"A userspace reboot" = "Un redémarrage de l'userspace";
+"is required to apply changes" = "est requis pour appliquer les modifications";
+"Ok" = "Ok";

@@ -80,7 +80,7 @@ struct TweakCompatibility: View {
         }.onAppear {
             self.tweaksList = TweakCompatibility.fetch()
         }
-        .navigationBarTitle(Text(String(localizationKey: "Tweak Compatibiltiy")), displayMode: .inline)
+        .navigationBarTitle(Text(String(localizationKey: "Tweak Compatibility")), displayMode: .inline)
     }
     
     private func save() {

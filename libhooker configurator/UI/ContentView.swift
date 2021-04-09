@@ -77,8 +77,8 @@ struct MainView: View {
                 }) {
                     Text(String(localizationKey: "Tweaks"))
                 }.alert(isPresented: tweaksBinding()) {
-                    Alert(title: Text("\(userspaceRebootSupported() ? String(localizationKey: "Userspace Reboot") : String(localizationKey: "LDRestart"))" + String(localizationKey: "Required")),
-                          message: Text("\(userspaceRebootSupported() ? String(localizationKey: "A userspace reboot") : String(localizationKey: "An ldrestart"))" + String(localizationKey: "is required to apply changes")),
+                    Alert(title: Text("\(userspaceRebootSupported() ? String(localizationKey: "Userspace Reboot") : String(localizationKey: "LDRestart")) " + String(localizationKey: "Required")),
+                          message: Text("\(userspaceRebootSupported() ? String(localizationKey: "A userspace reboot") : String(localizationKey: "An ldrestart")) " + String(localizationKey: "is required to apply changes")),
                           dismissButton: .default(Text(String(localizationKey: "OK")), action: {
                             userspaceReboot()
                           }))
