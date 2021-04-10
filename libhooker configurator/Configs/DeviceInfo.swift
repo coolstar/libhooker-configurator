@@ -5,7 +5,6 @@
 //  Created by CoolStar on 10/20/20.
 //  Copyright © 2020 coolstar. All rights reserved.
 //
-
 import Foundation
 import UIKit
 import CommonCrypto
@@ -50,21 +49,31 @@ public class DeviceInfo {
         guard !detectOdysseyRa1n() else {
             return "Odysseyra1n"
         }
-        if FileManager.default.fileExists(atPath: "/odyssey/jailbreakd") {
-            let jailbreak = "Odyssey"
-            _ = sha1File(url: URL(fileURLWithPath: "/odyssey/jailbreakd"))
-            return jailbreak
-        } else if FileManager.default.fileExists(atPath: "/chimera/jailbreakd") {
-            let jailbreak = "Chimera"
-            _ = sha1File(url: URL(fileURLWithPath: "/chimera/jailbreakd"))
-            return jailbreak
-        } else if FileManager.default.fileExists(atPath: "/taurine/jailbreakd") {
-            let jailbreak = "Taurine"
-            _ = sha1File(url: URL(fileURLWithPath: "/taurine/jailbreakd"))
-            return jailbreak
+        let odysseyJbd = "/odyssey/jailbreakd"
+        let taurineJbd = "/taurine/jailbreakd"
+        let chimeraJbd = "/chimera/jailbreakd"
+        
+        let jbdSHA1: String
+        let jailbreakName: String
+        if FileManager.default.fileExists(atPath: odysseyJbd) {
+            jailbreakName = "Odyssey"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: odysseyJbd))
+        } else if FileManager.default.fileExists(atPath: taurineJbd) {
+            jailbreakName = "Taurine"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: taurineJbd))
+        } else if FileManager.default.fileExists(atPath: chimeraJbd) {
+            jailbreakName = "Chimera"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: chimeraJbd))
         } else {
-            return "Unknown"
+            jailbreakName = "Unknown"
+            jbdSHA1 = ""
         }
+        if jailbreakName != "Unknown" {
+            if let version = getJailbreakVersion(sha1: jbdSHA1) {
+                return "\(jailbreakName) \(version)"
+            }
+        }
+        return jailbreakName
         #endif
     }
     
