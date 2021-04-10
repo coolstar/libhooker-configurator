@@ -17,6 +17,12 @@ class RootTableViewController: BaseTableViewController {
         navigationItem.largeTitleDisplayMode = .automatic
         let item = UIBarButtonItem(title: String(localizationKey: "Apply"), style: .done, target: self, action: #selector(showAlert))
         self.navigationItem.rightBarButtonItem = item
+        
+        DeviceInfo.shared.loadRemoteJailbreakData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

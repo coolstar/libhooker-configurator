@@ -35,7 +35,6 @@ public class DeviceInfo {
             if let data = data {
                 if let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: String] {
                     self.cachedData = plist
-                    print("Got jailbreak data")
                     callback()
                 }
             }
