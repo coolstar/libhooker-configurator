@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  libhooker configurator
+
+  Created by Deon on 11/9/20.
+  Copyright © 2021 coolstar. All rights reserved.
+
+  Translated to Brazilian Portuguese by BrunoNFL
+*/
+"Apply" = "Aplicar";
+"Version" = "Versão";
+"Jailbreak" = "Jailbreak";
+"iOS" = "iOS";
+"Global Configuration" = "Configuração Global";
+"Tweaks" = "Tweaks";
+"Allow tweaks in webpages" = "Permitir tweaks em páginas da web";
+"Default Configuration" = "Configuração Padrão";
+"Reset Configuration" = "Restaurar Configuração";
+"Process Configuration" = "Processar Configuração";
+"SpringBoard" = "SpringBoard";
+"Applications" = "Applications";
+"Daemons" = "Daemons";
+//二級菜單
+"Enable Tweaks" = "Habilitar Tweaks";
+"Override Configuration" = "Sobrepor Configuração";
+"Allow" = "Permitir";
+"Deny" = "Negar";
+// Apply
+"Apply Changes" = "Aplicar Mudanças";
+"Respring" = "Respring";
+"ldRestart" = "ldRestart";
+"Cancel" = "Cancelar";
+"Reboot Userspace" = "Reiniciar Userspace";
+
+
+"libhooker" = "libhooker";
+"is required to apply changes" = "é necessário para aplicar as configurações";
+"Required" = "Requerido";
