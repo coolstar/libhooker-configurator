@@ -15,7 +15,7 @@ class RootTableViewController: BaseTableViewController {
         
         self.title = String(localizationKey: "libhooker")
         navigationItem.largeTitleDisplayMode = .automatic
-        let item = UIBarButtonItem(title: String(localizationKey: "Apply"), style: .done, target: self, action: #selector(showAlert))
+        let item = UIBarButtonItem(title: String(localizationKey: "Apply"), style: .done, target: self, action: #selector(showAlert(_:)))
         self.navigationItem.rightBarButtonItem = item
         
         DeviceInfo.shared.loadRemoteJailbreakData {
@@ -30,12 +30,15 @@ class RootTableViewController: BaseTableViewController {
         self.tableView.reloadData()
     }
 
-    @objc private func showAlert() {
+    @objc private func showAlert(_ sender: Any) {
         let alert = UIAlertController(title: String(localizationKey: "Apply Changes"), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: String(localizationKey: "Respring"), style: .default) { _ in respring() })
         alert.addAction(UIAlertAction(title: userspaceRebootSupported() ? String(localizationKey: "Reboot Userspace") : String(localizationKey: "ldRestart"),
                                       style: .destructive) { _ in userspaceReboot() })
         alert.addAction(UIAlertAction(title: String(localizationKey: "Cancel"), style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.barButtonItem = sender as? UIBarButtonItem
+        }
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -44,7 +47,6 @@ class RootTableViewController: BaseTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0: return 3
         case 1: return 5
