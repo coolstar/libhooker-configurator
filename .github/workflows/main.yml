@@ -1,0 +1,35 @@
+on: [push, pull_request]
+name: Run CI
+jobs:
+  make:
+    name: Build and Upload Libhooker-Configurator
+    runs-on: macos-latest
+    env:
+      THEOS: theos
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          submodules: true
+      - name: Install ldid and dpkg
+        run: |
+          brew install ldid dpkg
+      - name: Build libhooker-configurator
+        run: |
+         make clean package BETA=1 DEBUG=0
+      - name: Upload To Repo
+        env: # 
+          token: ${{ secrets.AMY_REPO_SECRET }}
+        run: |
+          package=$(ls -t packages | head -n1)
+          curl -F deb="@./packages/${package}" -H "Auth: ${token}" https://api.anamy.gay/private/repo/upload
+          curl -H "Auth: ${token}" https://api.anamy.gay/private/repo/repackage
+  lint:
+    name: Lint libhooker-configurator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Run SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1

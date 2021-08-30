@@ -5,7 +5,6 @@
 //  Created by CoolStar on 10/20/20.
 //  Copyright © 2020 coolstar. All rights reserved.
 //
-
 import Foundation
 import UIKit
 import CommonCrypto
@@ -36,7 +35,6 @@ public class DeviceInfo {
             if let data = data {
                 if let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: String] {
                     self.cachedData = plist
-                    print("Got jailbreak data")
                     callback()
                 }
             }
@@ -52,6 +50,7 @@ public class DeviceInfo {
         }
         let odysseyJbd = "/odyssey/jailbreakd"
         let taurineJbd = "/taurine/jailbreakd"
+        let chimeraJbd = "/chimera/jailbreakd"
         
         let jbdSHA1: String
         let jailbreakName: String
@@ -61,6 +60,9 @@ public class DeviceInfo {
         } else if FileManager.default.fileExists(atPath: taurineJbd) {
             jailbreakName = "Taurine"
             jbdSHA1 = sha1File(url: URL(fileURLWithPath: taurineJbd))
+        } else if FileManager.default.fileExists(atPath: chimeraJbd) {
+            jailbreakName = "Chimera"
+            jbdSHA1 = sha1File(url: URL(fileURLWithPath: chimeraJbd))
         } else {
             jailbreakName = "Unknown"
             jbdSHA1 = ""

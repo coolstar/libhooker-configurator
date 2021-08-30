@@ -1,12 +1,12 @@
-Package: org.coolstar.libhooker-configurator
+Package: @@PACKAGE_ID@@
 Priority: required
 Section: Packaging
 Maintainer: CoolStar <coolstarorganization@gmail.com>
-Architecture: iphoneos-arm
-Version: 1.1.1
+Architecture: @@DEB_ARCH@@
+Version: @@MARKETING_VERSION@@
 Icon: https://repo.theodyssey.dev/depictions/icons/libhooker.png
 SileoDepiction: https://repo.theodyssey.dev/depictions/json/libhooker-configurator.json
-Depends: org.coolstar.libhooker (>=1.4.0), firmware (>= 13.0)
+Depends: @@DEB_DEPENDS@@
 Description: Configuration Utility for libhooker
-Name: libhooker Configurator
+Name: @@PACKAGE_NAME@@
 Author: CoolStar <coolstarorganization@gmail.com>

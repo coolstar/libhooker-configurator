@@ -2,33 +2,33 @@
   Localizable.strings
   libhooker configurator
 
-  Created by Deon on 11/9/20.
+  Created by Deon and Leo on 03/04/21.
   Copyright © 2021 coolstar. All rights reserved.
 */
-"Apply" = "應用";
+"Apply" = "套用";
 "Version" = "版本";
 "Jailbreak" = "越獄";
-"iOS" = "iOS版本";
-"Global Configuration" = "總體配置";
+"iOS" = "iOS 版本";
+"Global Configuration" = "全域設定";
 "Tweaks" = "插件";
-"Allow tweaks in webpages" = "允許插件在webpages上";
-"Default Configuration" = "一般配置";
-"Reset Configuration" = "重置配置";
-"Process Configuration" = "進程配置";
+"Allow tweaks in webpages" = "允許插件在網頁上運行";
+"Default Configuration" = "一般設定";
+"Reset Configuration" = "重置設定";
+"Process Configuration" = "程序設定";
 "SpringBoard" = "主畫面";
 "Applications" = "應用程式";
-"Daemons" = "系統進程";
+"Daemons" = "守護程序";
 //二級菜單
 "Enable Tweaks" = "啟用插件";
-"Override Configuration" = "覆蓋配置";
-"Allow" = "允許";
-"Deny" = "拒絕";
+"Override Configuration" = "覆蓋設定";
+"Allow" = "白名單";
+"Deny" = "黑名單";
 // Apply
-"Apply Changes" = "應用選項";
-"Respring" = "註銷";
+"Apply Changes" = "套用變更內容";
+"Respring" = "重啟主畫面";
 "ldRestart" = "軟重啟";
 "Cancel" = "取消";
-"Reboot Userspace" = "重啟用戶空間";
+"Reboot Userspace" = "重啟使用者空間";
 
 
 "libhooker" = "libhooker基板設定";

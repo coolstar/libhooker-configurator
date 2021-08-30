@@ -26,12 +26,12 @@
 // Apply
 "Apply Changes" = "Apply Changes";
 "Respring" = "Respring";
-"ldRestart" = "ldRestart";
+"ldRestart" = "LDRestart";
 "Cancel" = "Cancel";
 "Reboot Userspace" = "Reboot Userspace";
-
+"Later" = "Later";
 
 "libhooker" = "libhooker";
-"is required to apply changes" = "is required to apply changes";
+"is required to apply changes" = " is required to apply changes";
 "Required" = "Required";
 
