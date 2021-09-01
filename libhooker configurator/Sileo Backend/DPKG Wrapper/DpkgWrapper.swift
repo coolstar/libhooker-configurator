@@ -14,7 +14,6 @@ enum pkgwant: Int {
     hold,
     deinstall,
     purge,
-    /** Not allowed except as special sentinel value in some places. */
     sentinel
 }
 

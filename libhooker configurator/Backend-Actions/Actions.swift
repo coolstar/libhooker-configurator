@@ -25,7 +25,9 @@ func runCmd(path: String, args: [String]) -> Int32 {
 }
 
 func userspaceRebootSupported() -> Bool {
-    FileManager.default.fileExists(atPath: "/odyssey/jailbreakd.plist") || FileManager.default.fileExists(atPath: "/taurine/jailbreakd.plist")
+    FileManager.default.fileExists(atPath: "/odyssey/jailbreakd.plist") ||
+    FileManager.default.fileExists(atPath: "/taurine/jailbreakd.plist") ||
+    FileManager.default.fileExists(atPath: "/chimera/jailbreakd.plist")
 }
 
 func enableTweaks() {

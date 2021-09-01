@@ -58,7 +58,7 @@ class PackageListManager {
                 let subdata = rawPackagesData.subdata(in: firstSeparator.lowerBound-1..<firstSeparator.lowerBound)
                 let character = subdata.first
                 if character == 13 { // \r
-                    //Found windows line endings
+                    // Found windows line endings
                     separator = "\r\n\r\n".data(using: .utf8)!
                 }
             }

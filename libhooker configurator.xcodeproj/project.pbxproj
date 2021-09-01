@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		BC3381FF25C112F60090BB3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC33820125C112F60090BB3C /* Localizable.strings */; };
+		E1363859261385AE00698D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1363858261385AD00698D55 /* Main.storyboard */; };
+		E136385F2613870F00698D55 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136385E2613870F00698D55 /* RootTableViewController.swift */; };
+		E13638642613881D00698D55 /* CellsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638632613881D00698D55 /* CellsCollection.swift */; };
+		E13638682613885B00698D55 /* UserDefaults+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638672613885B00698D55 /* UserDefaults+Optional.swift */; };
+		E136386C2613A13900698D55 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136386B2613A13900698D55 /* ConfigViewController.swift */; };
+		E13638752613C17200698D55 /* LaunchServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638742613C17200698D55 /* LaunchServiceListView.swift */; };
+		E13638792613C82B00698D55 /* TweakCompatibilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13638782613C82B00698D55 /* TweakCompatibilityList.swift */; };
+		E13638802613D33100698D55 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136387F2613D33100698D55 /* ThemeManager.swift */; };
 		F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */; };
-		F110FFF025C6281E00658679 /* TweakCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFEF25C6281E00658679 /* TweakCompatibility.swift */; };
-		F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1282B0D2559FCC10050043B /* Binding+Update.swift */; };
 		F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0332522A75500EB0A20 /* AppDelegate.swift */; };
-		F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0352522A75500EB0A20 /* SceneDelegate.swift */; };
-		F142F0382522A75500EB0A20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0372522A75500EB0A20 /* ContentView.swift */; };
 		F142F03A2522A75600EB0A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F0392522A75600EB0A20 /* Assets.xcassets */; };
 		F142F03D2522A75600EB0A20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */; };
 		F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */; };
-		F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0472525003B00EB0A20 /* TweakConfiguration.swift */; };
-		F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F04A2526C61400EB0A20 /* ProcessList.swift */; };
 		F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71625BFC8AE006FF2E6 /* launchd-list.m */; };
 		F16EE71925BFDDBB006FF2E6 /* CoreServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71825BFDDBB006FF2E6 /* CoreServices.m */; };
-		F16EE71D25C00F6F006FF2E6 /* PopSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */; };
 		F16EE72025C01110006FF2E6 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71F25C01110006FF2E6 /* Actions.swift */; };
 		F16EE73025C02154006FF2E6 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72725C02154006FF2E6 /* Package.swift */; };
 		F16EE73125C02154006FF2E6 /* String-TrimLeadingWhitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EE72925C02154006FF2E6 /* String-TrimLeadingWhitespace.swift */; };
@@ -38,25 +39,26 @@
 		BC33820025C112F60090BB3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC33820625C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BC33820925C1258D0090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E1363858261385AD00698D55 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E136385E2613870F00698D55 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		E13638632613881D00698D55 /* CellsCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsCollection.swift; sourceTree = "<group>"; };
+		E13638672613885B00698D55 /* UserDefaults+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Optional.swift"; sourceTree = "<group>"; };
+		E136386B2613A13900698D55 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		E13638742613C17200698D55 /* LaunchServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceListView.swift; sourceTree = "<group>"; };
+		E13638782613C82B00698D55 /* TweakCompatibilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCompatibilityList.swift; sourceTree = "<group>"; };
+		E136387F2613D33100698D55 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedHelpers.swift"; sourceTree = "<group>"; };
-		F110FFEF25C6281E00658679 /* TweakCompatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweakCompatibility.swift; sourceTree = "<group>"; };
-		F1282B0D2559FCC10050043B /* Binding+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Update.swift"; sourceTree = "<group>"; };
 		F142F0302522A75500EB0A20 /* libhooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libhooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F142F0352522A75500EB0A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F142F0372522A75500EB0A20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F142F0392522A75600EB0A20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F142F03F2522A75600EB0A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F142F0412522A75600EB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F142F0472525003B00EB0A20 /* TweakConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakConfiguration.swift; sourceTree = "<group>"; };
-		F142F04A2526C61400EB0A20 /* ProcessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessList.swift; sourceTree = "<group>"; };
 		F16EE71425BFC8AD006FF2E6 /* libhooker configurator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libhooker configurator-Bridging-Header.h"; sourceTree = "<group>"; };
 		F16EE71525BFC8AE006FF2E6 /* launchd-list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "launchd-list.h"; sourceTree = "<group>"; };
 		F16EE71625BFC8AE006FF2E6 /* launchd-list.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "launchd-list.m"; sourceTree = "<group>"; };
 		F16EE71825BFDDBB006FF2E6 /* CoreServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreServices.m; sourceTree = "<group>"; };
 		F16EE71A25BFDDCA006FF2E6 /* CoreServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreServices.h; sourceTree = "<group>"; };
-		F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSheet.swift; sourceTree = "<group>"; };
 		F16EE71F25C01110006FF2E6 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		F16EE72725C02154006FF2E6 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F16EE72925C02154006FF2E6 /* String-TrimLeadingWhitespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-TrimLeadingWhitespace.swift"; sourceTree = "<group>"; };
@@ -80,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1363862261387F900698D55 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E13638632613881D00698D55 /* CellsCollection.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		E13638662613884D00698D55 /* Contrib */ = {
+			isa = PBXGroup;
+			children = (
+				E13638672613885B00698D55 /* UserDefaults+Optional.swift */,
+				F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */,
+			);
+			path = Contrib;
+			sourceTree = "<group>";
+		};
 		F142F0272522A75500EB0A20 = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +122,11 @@
 				F16EE71E25C01103006FF2E6 /* Backend-Actions */,
 				F16EE71325BFC896006FF2E6 /* Data Providers */,
 				F1F0FD31253F6B6C001F20EF /* Configs */,
+				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
 				F1F0FD30253F6B63001F20EF /* UI */,
 				F16EE71425BFC8AD006FF2E6 /* libhooker configurator-Bridging-Header.h */,
 				F142F0392522A75600EB0A20 /* Assets.xcassets */,
+				E1363858261385AD00698D55 /* Main.storyboard */,
 				F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */,
 				F142F0412522A75600EB0A20 /* Info.plist */,
 				F142F03B2522A75600EB0A20 /* Preview Content */,
@@ -129,14 +150,6 @@
 				F16EE73D25C0EE48006FF2E6 /* mounts */,
 			);
 			path = "Data Providers";
-			sourceTree = "<group>";
-		};
-		F16EE71B25C00F64006FF2E6 /* BugFix-13 */ = {
-			isa = PBXGroup;
-			children = (
-				F16EE71C25C00F6F006FF2E6 /* PopSheet.swift */,
-			);
-			path = "BugFix-13";
 			sourceTree = "<group>";
 		};
 		F16EE71E25C01103006FF2E6 /* Backend-Actions */ = {
@@ -229,16 +242,14 @@
 		F1F0FD30253F6B63001F20EF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F16EE71B25C00F64006FF2E6 /* BugFix-13 */,
-				F142F0332522A75500EB0A20 /* AppDelegate.swift */,
-				F142F0352522A75500EB0A20 /* SceneDelegate.swift */,
-				F142F0372522A75500EB0A20 /* ContentView.swift */,
-				F110FFEF25C6281E00658679 /* TweakCompatibility.swift */,
-				F142F0472525003B00EB0A20 /* TweakConfiguration.swift */,
-				F142F04A2526C61400EB0A20 /* ProcessList.swift */,
-				F1282B0D2559FCC10050043B /* Binding+Update.swift */,
-				F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */,
+				E13638662613884D00698D55 /* Contrib */,
+				E1363862261387F900698D55 /* Table View Cells */,
 				BC33820125C112F60090BB3C /* Localizable.strings */,
+				E136385E2613870F00698D55 /* RootTableViewController.swift */,
+				E136386B2613A13900698D55 /* ConfigViewController.swift */,
+				E13638742613C17200698D55 /* LaunchServiceListView.swift */,
+				E13638782613C82B00698D55 /* TweakCompatibilityList.swift */,
+				E136387F2613D33100698D55 /* ThemeManager.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -316,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */,
+				E1363859261385AE00698D55 /* Main.storyboard in Resources */,
 				BC3381FF25C112F60090BB3C /* Localizable.strings in Resources */,
 				F142F03D2522A75600EB0A20 /* Preview Assets.xcassets in Resources */,
 				F142F03A2522A75600EB0A20 /* Assets.xcassets in Resources */,
@@ -349,22 +361,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E136386C2613A13900698D55 /* ConfigViewController.swift in Sources */,
+				E13638682613885B00698D55 /* UserDefaults+Optional.swift in Sources */,
 				F16EE73325C02154006FF2E6 /* ControlFileParser.swift in Sources */,
 				F16EE73A25C037E0006FF2E6 /* mountData.c in Sources */,
 				F16EE73125C02154006FF2E6 /* String-TrimLeadingWhitespace.swift in Sources */,
 				F16EE73425C02154006FF2E6 /* DpkgWrapper.swift in Sources */,
-				F142F04B2526C61400EB0A20 /* ProcessList.swift in Sources */,
+				E13638792613C82B00698D55 /* TweakCompatibilityList.swift in Sources */,
+				E13638802613D33100698D55 /* ThemeManager.swift in Sources */,
 				F1F0FD33253F6B77001F20EF /* DeviceInfo.swift in Sources */,
 				F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */,
+				E136385F2613870F00698D55 /* RootTableViewController.swift in Sources */,
 				F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */,
-				F16EE71D25C00F6F006FF2E6 /* PopSheet.swift in Sources */,
-				F1282B0E2559FCC10050043B /* Binding+Update.swift in Sources */,
 				F16EE72025C01110006FF2E6 /* Actions.swift in Sources */,
 				F16EE73F25C0EF6B006FF2E6 /* LHUserDefaults.swift in Sources */,
-				F142F0362522A75500EB0A20 /* SceneDelegate.swift in Sources */,
-				F110FFF025C6281E00658679 /* TweakCompatibility.swift in Sources */,
-				F142F0382522A75500EB0A20 /* ContentView.swift in Sources */,
-				F142F0482525003B00EB0A20 /* TweakConfiguration.swift in Sources */,
+				E13638642613881D00698D55 /* CellsCollection.swift in Sources */,
+				E13638752613C17200698D55 /* LaunchServiceListView.swift in Sources */,
 				F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */,
 				F16EE71925BFDDBB006FF2E6 /* CoreServices.m in Sources */,
 				F16EE73025C02154006FF2E6 /* Package.swift in Sources */,
@@ -432,6 +444,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -448,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -493,6 +506,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -503,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -523,12 +537,13 @@
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/usr/lib/libswift/stable,
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
@@ -548,12 +563,13 @@
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/usr/lib/libswift/stable,
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";

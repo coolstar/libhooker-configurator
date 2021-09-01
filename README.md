@@ -1,8 +1,10 @@
-# Configuration utility for libhooker (iOS 13 and higher)
+# Configuration utility for libhooker (iOS 12 and higher)
 
 ## Languages / Toolkits
 
-This is primarily written in Swift and uses SwiftUI for its interface
+This is primarily written in Swift and uses ~~SwiftUI~~ UIKit for its interface
+
+RIP SwiftUI for being buggy :( -- we tried
 
 ## Credits
 

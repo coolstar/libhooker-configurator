@@ -43,10 +43,10 @@
 // Alert: Apply 
 "Apply Changes" = "Apply Changes";
 "Respring" = "Respring";
-"ldRestart" = "ldRestart";
-"LDRestart" = "LDRestart";
-"Reboot Userspace" = "Reboot Userspace";
+"ldRestart" = "LDRestart";
 "Cancel" = "Cancel";
+"Reboot Userspace" = "Reboot Userspace";
+"Later" = "Later";
 
 
 // Alert: Reset configuration
@@ -56,7 +56,7 @@
 
 
 // Alert: Something required
-"Required" = "required";
+"Required" = "Required";
 "An ldrestart" = "An ldrestart";
 "A userspace reboot" = "A userspace reboot";
 "is required to apply changes" = "is required to apply changes";
