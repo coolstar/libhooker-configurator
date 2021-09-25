@@ -19,7 +19,6 @@
 		F110FFEE25C61EBC00658679 /* String+LocalizedHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */; };
 		F142F0342522A75500EB0A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142F0332522A75500EB0A20 /* AppDelegate.swift */; };
 		F142F03A2522A75600EB0A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F0392522A75600EB0A20 /* Assets.xcassets */; };
-		F142F03D2522A75600EB0A20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */; };
 		F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */; };
 		F16EE71725BFC8AE006FF2E6 /* launchd-list.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71625BFC8AE006FF2E6 /* launchd-list.m */; };
 		F16EE71925BFDDBB006FF2E6 /* CoreServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F16EE71825BFDDBB006FF2E6 /* CoreServices.m */; };
@@ -52,7 +51,6 @@
 		F142F0302522A75500EB0A20 /* libhooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libhooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F142F0392522A75600EB0A20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F142F03F2522A75600EB0A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F142F0412522A75600EB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16EE71425BFC8AD006FF2E6 /* libhooker configurator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libhooker configurator-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -130,17 +128,8 @@
 				E1363858261385AD00698D55 /* Main.storyboard */,
 				F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */,
 				F142F0412522A75600EB0A20 /* Info.plist */,
-				F142F03B2522A75600EB0A20 /* Preview Content */,
 			);
 			path = "libhooker configurator";
-			sourceTree = "<group>";
-		};
-		F142F03B2522A75600EB0A20 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F142F03C2522A75600EB0A20 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F16EE71325BFC896006FF2E6 /* Data Providers */ = {
@@ -329,7 +318,6 @@
 				F142F0402522A75600EB0A20 /* LaunchScreen.storyboard in Resources */,
 				E1363859261385AE00698D55 /* Main.storyboard in Resources */,
 				BC3381FF25C112F60090BB3C /* Localizable.strings in Resources */,
-				F142F03D2522A75600EB0A20 /* Preview Assets.xcassets in Resources */,
 				F142F03A2522A75600EB0A20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
@@ -561,7 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"libhooker configurator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
