@@ -41,7 +41,7 @@ class LaunchServiceListView: BaseTableViewController {
     }
     public var visibleServices: [LaunchService] = [] {
         didSet {
-            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+            tableView.reloadSections(IndexSet(integer: 0), with: .none)
         }
     }
 
@@ -166,6 +166,6 @@ extension LaunchServiceListView: UISearchBarDelegate, UISearchResultsUpdating {
             return
         }
         text = text.lowercased()
-        visibleServices = services.filter { $0.name.lowercased().contains(text) || $0.bundle.lowercased().contains(text) }
+        visibleServices = services.filter { $0.name.lowercased().contains(text) }
     }
 }
