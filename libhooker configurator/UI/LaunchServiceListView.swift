@@ -106,7 +106,7 @@ class LaunchServiceListView: BaseTableViewController {
         } else {
             configVC = ConfigViewController(style: .grouped)
         }
-        configVC.launchService = services[indexPath.row]
+        configVC.launchService = visibleServices[indexPath.row]
         self.navigationController?.pushViewController(configVC, animated: true)
     }
 
