@@ -36,7 +36,12 @@ class LaunchServiceListView: BaseTableViewController {
     public var serviceFilter: LaunchServiceFilter?
     public var services: [LaunchService] = [] {
         didSet {
-            self.tableView.reloadData()
+            visibleServices = services
+        }
+    }
+    public var visibleServices: [LaunchService] = [] {
+        didSet {
+            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
     }
 
@@ -55,12 +60,25 @@ class LaunchServiceListView: BaseTableViewController {
         }
     }
     
+    let searchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = navTitle
         navigationItem.largeTitleDisplayMode = .never
         self.fetch()
+        
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        self.searchController.searchBar.placeholder = "Search"
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,12 +86,12 @@ class LaunchServiceListView: BaseTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        services.count
+        visibleServices.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
-        cell.textLabel?.text = services[indexPath.row].name
+        cell.textLabel?.text = visibleServices[indexPath.row].name
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.textColor = ThemeManager.labelColour
         cell.backgroundColor = ThemeManager.backgroundColour
@@ -138,5 +156,16 @@ class LaunchServiceListView: BaseTableViewController {
             }
         }
     }
+}
 
+extension LaunchServiceListView: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard var text = searchController.searchBar.text,
+              !text.isEmpty else {
+            visibleServices = services
+            return
+        }
+        text = text.lowercased()
+        visibleServices = services.filter { $0.name.lowercased().contains(text) || $0.bundle.lowercased().contains(text) }
+    }
 }
