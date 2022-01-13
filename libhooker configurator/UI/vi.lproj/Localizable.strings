@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  libhooker configurator
+
+  Created by hmuy on 14/9/2021.
+  Copyright © 2021 coolstar. All rights reserved.
+*/
+"Apply" = "Áp dụng";
+"Version" = "Phiên bản";
+"Jailbreak" = "Jailbreak";
+"iOS" = "iOS";
+"Global Configuration" = "Cài đặt chung";
+"Tweaks" = "Tinh chỉnh";
+"Allow tweaks in webpages" = "Cho phép tinh chỉnh với trang web";
+"Default Configuration" = "Cài đặt mặc định";
+"Reset Configuration" = "Xóa các cài đặt";
+"Process Configuration" = "Cài đặt các tiến trình";
+"SpringBoard" = "SpringBoard";
+"Applications" = "Các ứng dụng";
+"Daemons" = "Daemons";
+"Enable Tweaks" = "Bật các tinh chỉnh";
+"Override Configuration" = "Ghi đè cài đặt";
+"Allow" = "Cho phép";
+"Deny" = "Từ chối";
+// Apply
+"Apply Changes" = "Áp dụng thay đổi";
+"Respring" = "Khởi động lại SpringBoard";
+"ldRestart" = "LDRestart";
+"Cancel" = "Hủy";
+"Reboot Userspace" = "Khởi động lại Userspace";
+"Later" = "Để sau";
+
+"libhooker" = "libhooker";
+"is required to apply changes" = " được yêu cầu đề áp dụng thay đổi";
+"Required" = "Được yêu cầu";
+
