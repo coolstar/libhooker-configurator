@@ -2,28 +2,45 @@
   Localizable.strings
   libhooker configurator
 
-  Created by Deon on 11/9/20.
+  Created by Deon on 2020-11-09. (Updated by Evan Galli on 2021-04-09)
   Copyright © 2021 coolstar. All rights reserved.
 */
+
+"libhooker" = "libhooker";
+
 "Apply" = "Apply";
 "Version" = "Version";
 "Jailbreak" = "Jailbreak";
 "iOS" = "iOS";
+
 "Global Configuration" = "Global Configuration";
 "Tweaks" = "Tweaks";
 "Allow tweaks in webpages" = "Allow tweaks in webpages";
+"Tweak Compatibility" = "Tweak Compatibility";
 "Default Configuration" = "Default Configuration";
 "Reset Configuration" = "Reset Configuration";
+
 "Process Configuration" = "Process Configuration";
 "SpringBoard" = "SpringBoard";
 "Applications" = "Applications";
 "Daemons" = "Daemons";
-//二級菜單
+
+
+// Menu: Tweak compatibility
+"Compatibility Mode" = "Compatibility Mode";
+"libhooker Default" = "Libhooker Default";
+"Substrate Compatibility" = "Substrate Compatibility";
+"Enabling substrate compatibility may allow some poorly written / outdated tweaks to work. However, this will increase memory usage." = "Enabling substrate compatibility may allow some poorly written / outdated tweaks to work. However, this will increase memory usage.";
+
+
+// Menu: Default configuration
 "Enable Tweaks" = "Enable Tweaks";
 "Override Configuration" = "Override Configuration";
 "Allow" = "Allow";
 "Deny" = "Deny";
-// Apply
+
+
+// Alert: Apply 
 "Apply Changes" = "Apply Changes";
 "Respring" = "Respring";
 "ldRestart" = "LDRestart";
@@ -31,7 +48,16 @@
 "Reboot Userspace" = "Reboot Userspace";
 "Later" = "Later";
 
-"libhooker" = "libhooker";
-"is required to apply changes" = " is required to apply changes";
-"Required" = "Required";
 
+// Alert: Reset configuration
+"Tweak configurations for all processes will be reset" = "Tweak configurations for all processes will be reset";
+"Yes" = "Yes";
+"No" = "No";
+
+
+// Alert: Something required
+"Required" = "Required";
+"An ldrestart" = "An ldrestart";
+"A userspace reboot" = "A userspace reboot";
+"is required to apply changes" = "is required to apply changes";
+"Ok" = "Ok";

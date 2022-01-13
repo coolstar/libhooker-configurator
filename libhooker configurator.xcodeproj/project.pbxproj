@@ -34,10 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71963F6D2620E3050074D9A9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC33820025C112F60090BB3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BC33820525C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BC33820625C1134B0090BB3C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		BC33820825C125780090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		BC33820925C1258D0090BB3C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E1363858261385AD00698D55 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E136385E2613870F00698D55 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +298,7 @@
 				Base,
 				"zh-Hant",
 				"zh-Hans",
+				fr,
 			);
 			mainGroup = F142F0272522A75500EB0A20;
 			productRefGroup = F142F0312522A75500EB0A20 /* Products */;
@@ -381,6 +381,7 @@
 				BC33820025C112F60090BB3C /* en */,
 				BC33820625C1134B0090BB3C /* zh-Hant */,
 				BC33820925C1258D0090BB3C /* zh-Hans */,
+				71963F6D2620E3050074D9A9 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -388,9 +389,7 @@
 		F142F03E2522A75600EB0A20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F142F03F2522A75600EB0A20 /* Base */,
-				BC33820525C1134B0090BB3C /* zh-Hant */,
-				BC33820825C125780090BB3C /* zh-Hans */,
+				F142F03F2522A75600EB0A20 /* Base */
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
