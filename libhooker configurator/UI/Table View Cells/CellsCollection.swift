@@ -68,7 +68,7 @@ class TweaksEnabledSwitch: UITableViewCell {
         } else {
             disableTweaks()
         }
-        let title =  "\(userspaceRebootSupported() ? String(localizationKey: "Userspace Reboot") : String(localizationKey: "LDRestart"))" + String(localizationKey: "Required")
+        let title =  "\(userspaceRebootSupported() ? String(localizationKey: "Userspace Reboot") : String(localizationKey: "LDRestart"))" + " " + String(localizationKey: "Required")
         let message = "\(userspaceRebootSupported() ? String(localizationKey: "A userspace reboot") : String(localizationKey: "An ldrestart"))"
             + String(localizationKey: "is required to apply changes")
         let applyNowTitle = userspaceRebootSupported() ? String(localizationKey: "Reboot Userspace") : String(localizationKey: "ldRestart")
