@@ -39,7 +39,7 @@ class TweakCompatibilityList: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = String(localizationKey: "Tweak Compatibiltiy")
+        self.title = String(localizationKey: "Tweak Compatibility")
         navigationItem.largeTitleDisplayMode = .never
     }
 
