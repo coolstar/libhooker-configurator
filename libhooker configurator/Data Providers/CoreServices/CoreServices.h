@@ -16,6 +16,9 @@
 - (nullable NSString *)localizedName;
 - (nullable NSString *)applicationIdentifier;
 - (nullable NSString *)_boundApplicationIdentifier;
+@end
+
+@interface LSApplicationProxy (libhooker)
 - (nullable NSString *)LHIdentifier;
 @end
 

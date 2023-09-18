@@ -46,6 +46,8 @@
 		E13638742613C17200698D55 /* LaunchServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceListView.swift; sourceTree = "<group>"; };
 		E13638782613C82B00698D55 /* TweakCompatibilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakCompatibilityList.swift; sourceTree = "<group>"; };
 		E136387F2613D33100698D55 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		E15FBB1B2AB86FFE009EA91B /* giveMeRoot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = giveMeRoot.c; path = giveMeRoot/giveMeRoot.c; sourceTree = SOURCE_ROOT; };
+		E15FBB1C2AB87A92009EA91B /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		F110FFED25C61EBC00658679 /* String+LocalizedHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedHelpers.swift"; sourceTree = "<group>"; };
 		F142F0302522A75500EB0A20 /* libhooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = libhooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F142F0332522A75500EB0A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +99,18 @@
 			path = Contrib;
 			sourceTree = "<group>";
 		};
+		E15FBB1A2AB86FF2009EA91B /* GiveMeRoot */ = {
+			isa = PBXGroup;
+			children = (
+				E15FBB1B2AB86FFE009EA91B /* giveMeRoot.c */,
+			);
+			path = GiveMeRoot;
+			sourceTree = "<group>";
+		};
 		F142F0272522A75500EB0A20 = {
 			isa = PBXGroup;
 			children = (
+				E15FBB1C2AB87A92009EA91B /* Makefile */,
 				F142F0322522A75500EB0A20 /* libhooker configurator */,
 				F142F0312522A75500EB0A20 /* Products */,
 			);
@@ -116,6 +127,7 @@
 		F142F0322522A75500EB0A20 /* libhooker configurator */ = {
 			isa = PBXGroup;
 			children = (
+				E15FBB1A2AB86FF2009EA91B /* GiveMeRoot */,
 				F16EE72525C02154006FF2E6 /* Sileo Backend */,
 				F16EE71E25C01103006FF2E6 /* Backend-Actions */,
 				F16EE71325BFC896006FF2E6 /* Data Providers */,
@@ -262,7 +274,6 @@
 				F142F02C2522A75500EB0A20 /* Sources */,
 				F142F02D2522A75500EB0A20 /* Frameworks */,
 				F142F02E2522A75500EB0A20 /* Resources */,
-				F1282B10255A02A30050043B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -323,26 +334,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F1282B10255A02A30050043B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint || true\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F142F02C2522A75500EB0A20 /* Sources */ = {
@@ -522,7 +513,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7J8FJX4SRX;
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
@@ -532,7 +523,7 @@
 					"@executable_path/Frameworks",
 					/usr/lib/libswift/stable,
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";
@@ -549,7 +540,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7J8FJX4SRX;
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/apple_include\"";
 				INFOPLIST_FILE = "libhooker configurator/Info.plist";
@@ -559,7 +550,7 @@
 					"@executable_path/Frameworks",
 					/usr/lib/libswift/stable,
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.coolstar.libhooker-configurator";
 				PRODUCT_NAME = libhooker;
 				SWIFT_OBJC_BRIDGING_HEADER = "libhooker configurator/libhooker configurator-Bridging-Header.h";

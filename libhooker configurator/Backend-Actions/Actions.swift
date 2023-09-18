@@ -30,6 +30,14 @@ func userspaceRebootSupported() -> Bool {
     FileManager.default.fileExists(atPath: "/chimera/jailbreakd.plist")
 }
 
+func enableOldABI() {
+    _ = runCmd(path: Bundle.main.path(forResource: "giveMeRoot", ofType: "") ?? "", args: ["giveMeRoot", "enableOldABI"])
+}
+
+func disableOldABI() {
+    _ = runCmd(path: Bundle.main.path(forResource: "giveMeRoot", ofType: "") ?? "", args: ["giveMeRoot", "disableOldABI"])
+}
+
 func enableTweaks() {
     _ = runCmd(path: Bundle.main.path(forResource: "giveMeRoot", ofType: "") ?? "", args: ["giveMeRoot", "enableTweaks"])
 }

@@ -45,11 +45,21 @@ class RootTableViewController: BaseTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         3
     }
+    
+    private static var showOldABI: Int = {
+        if #available(iOS 14.5, *) {
+            var subtype: cpu_subtype_t = 0
+            var length = MemoryLayout<cpu_subtype_t>.size
+            sysctlbyname("hw.cpusubtype", &subtype, &length, nil, 0)
+            return subtype == CPU_SUBTYPE_ARM64E ? 1 : 0
+        }
+        return 0
+    }()
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 3
-        case 1: return 5
+        case 1: return 5 + Self.showOldABI
         case 2: return 3
         default: fatalError("You fucked up")
         }
@@ -75,6 +85,15 @@ class RootTableViewController: BaseTableViewController {
             }
             return cell
         } else if indexPath.section == 1 {
+            if indexPath.row == 1 && Self.showOldABI == 1 {
+                let cell = OldABIEnabledSwitch()
+                cell.textLabel?.text = String(localizationKey: "Old ABI Patch")
+                cell.presentVC = self
+                cell.textLabel?.textColor = ThemeManager.labelColour
+                cell.accessoryType = .none
+                cell.backgroundColor = ThemeManager.backgroundColour
+                return cell
+            }
             switch indexPath.row {
             case 0:
                 let cell = TweaksEnabledSwitch()
@@ -84,7 +103,7 @@ class RootTableViewController: BaseTableViewController {
                 cell.accessoryType = .none
                 cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
-            case 1:
+            case 1 + Self.showOldABI:
                 let cell = SettingsSwitchTableViewCell()
                 cell.textLabel?.text = String(localizationKey: "Allow tweaks in webpages")
                 cell.defaultKey = "webProcessTweaks"
@@ -92,21 +111,21 @@ class RootTableViewController: BaseTableViewController {
                 cell.accessoryType = .none
                 cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
-            case 2:
+            case 2 + Self.showOldABI:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Tweak Compatibility")
                 cell.accessoryType = .disclosureIndicator
                 cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
-            case 3:
+            case 3 + Self.showOldABI:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Default Configuration")
                 cell.accessoryType = .disclosureIndicator
                 cell.textLabel?.textColor = ThemeManager.labelColour
                 cell.backgroundColor = ThemeManager.backgroundColour
                 return cell
-            case 4:
+            case 4 + Self.showOldABI:
                 let cell = self.reusableCell(withStyle: .default, reuseIdentifier: "DefaultCell")
                 cell.textLabel?.text = String(localizationKey: "Reset Configuration")
                 cell.accessoryType = .none
@@ -158,7 +177,7 @@ class RootTableViewController: BaseTableViewController {
         if indexPath.section == 0 { return }
         if indexPath.section == 1 {
             switch indexPath.row {
-            case 2:
+            case 2 + Self.showOldABI:
                 if #available(iOS 13.0, *) {
                     let tweakCompatList = TweakCompatibilityList(style: .insetGrouped)
                     self.navigationController?.pushViewController(tweakCompatList, animated: true)
@@ -166,7 +185,7 @@ class RootTableViewController: BaseTableViewController {
                     let tweakCompatList = TweakCompatibilityList(style: .grouped)
                     self.navigationController?.pushViewController(tweakCompatList, animated: true)
                 }
-            case 3:
+            case 3 + Self.showOldABI:
                 let configVC: ConfigViewController
                 if #available(iOS 13.0, *) {
                     configVC = ConfigViewController(style: .insetGrouped)
@@ -175,7 +194,7 @@ class RootTableViewController: BaseTableViewController {
                 }
                 configVC.launchService = LaunchService.empty
                 self.navigationController?.pushViewController(configVC, animated: true)
-            case 4:
+            case 4 + Self.showOldABI:
                 let alert = UIAlertController(title: String(localizationKey: "Reset Configuration"),
                                               message: String(localizationKey: "Tweak configurations for all processes will be reset"),
                                               preferredStyle: .alert)
