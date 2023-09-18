@@ -20,6 +20,7 @@
 "Daemons" = "守護程序";
 //二級菜單
 "Enable Tweaks" = "啟用插件";
+"Old ABI Patch" = "Old ABI Patch";
 "Override Configuration" = "覆蓋設定";
 "Allow" = "白名單";
 "Deny" = "黑名單";

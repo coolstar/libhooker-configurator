@@ -20,6 +20,7 @@
 "Daemons" = "系统进程";
 //二級菜單
 "Enable Tweaks" = "启用插件";
+"Old ABI Patch" = "Old ABI Patch";
 "Override Configuration" = "独立配置";
 "Allow" = "允许";
 "Deny" = "禁止";

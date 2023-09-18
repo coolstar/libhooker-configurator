@@ -68,6 +68,15 @@ int main(int argc, char *argv[]){
         close(fd);
         return 0;
     }
+    if (strcmp(argv[1], "disableOldABI") == 0){
+        int fd = open("/.libhooker_disableOldABI", O_CREAT);
+        close(fd);
+        return 0;
+    }
+    if (strcmp(argv[1], "enableOldABI") == 0){
+        unlink("/.libhooker_disableOldABI");
+        return 0;
+    }
     if (strcmp(argv[1], "ldRestart") == 0){
         char *args[2] = {"ldrestart", NULL};
         execv("/usr/bin/ldrestart", args);

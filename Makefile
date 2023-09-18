@@ -37,15 +37,15 @@ LHC_ID   = org.coolstar.libhooker-configurator
 LHC_NAME = libhooker-configurator
 LHC_APP  = libhooker.app
 
-LHCTMP = $(TMPDIR)/libhooker
-LHC_STAGE_DIR = $(LHCTMP)/stage
-LHC_APP_DIR = $(LHCTMP)/install/$(PREFIX)/Applications/libhooker.app
-
 ifneq ($(DEBUG),0)
 BUILD_CONFIG  := Debug
 else
 BUILD_CONFIG  := Release
 endif
+
+LHCTMP = $(TMPDIR)/libhooker
+LHC_STAGE_DIR = $(LHCTMP)/stage
+LHC_APP_DIR =  $(LHCTMP)/Build/Products/$(BUILD_CONFIG)-$(PLATFORM)/libhooker.app
 
 ifeq ($(shell dpkg-deb --help | grep "zstd" && echo 1),1)
 DPKG_TYPE ?= zstd
@@ -60,7 +60,6 @@ giveMeRoot/bin/giveMeRoot: giveMeRoot/giveMeRoot.c
 $(LHC_APP_DIR):
 	@set -o pipefail; \
 		xcodebuild -jobs $(shell sysctl -n hw.ncpu) -project 'libhooker configurator.xcodeproj' -scheme 'libhooker configurator' -configuration $(BUILD_CONFIG) -arch $(ARCH) -sdk $(PLATFORM) -derivedDataPath $(LHCTMP) \
-		archive -archivePath="$(LHCTMP)/libhooker.xcarchive" \
 		CODE_SIGNING_ALLOWED=NO PRODUCT_BUNDLE_IDENTIFIER=$(PRODUCT_BUNDLE_IDENTIFIER) \
 		DSTROOT=$(LHCTMP)/install $(XCPRETTY)
 	@rm -f $(LHC_APP_DIR)/Frameworks/libswift*.dylib

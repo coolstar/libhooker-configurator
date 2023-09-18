@@ -81,6 +81,45 @@ class TweaksEnabledSwitch: UITableViewCell {
     }
 }
 
+class OldABIEnabledSwitch: UITableViewCell {
+    private var control: UISwitch = UISwitch()
+    var presentVC: UIViewController?
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.selectionStyle = .none
+        self.contentView.addSubview(control)
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        control.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
+        control.addTarget(self, action: #selector(self.didChange(sender:)), for: .valueChanged)
+        control.isOn = !FileManager.default.fileExists(atPath: "/.libhooker_disableOldABI")
+    }
+    
+    @objc private func didChange(sender: UISwitch!) {
+        if control.isOn {
+            enableOldABI()
+        } else {
+            disableOldABI()
+        }
+        let title =  "\(userspaceRebootSupported() ? String(localizationKey: "Userspace Reboot") : String(localizationKey: "LDRestart"))" + " " + String(localizationKey: "Required")
+        let message = "\(userspaceRebootSupported() ? String(localizationKey: "A userspace reboot") : String(localizationKey: "An ldrestart"))"
+            + " " + String(localizationKey: "is required to apply changes")
+        let applyNowTitle = userspaceRebootSupported() ? String(localizationKey: "Reboot Userspace") : String(localizationKey: "ldRestart")
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: String(localizationKey: "Later"), style: .cancel))
+        alert.addAction(UIAlertAction(title: applyNowTitle, style: .destructive) { _ in
+            userspaceReboot()
+        })
+        self.presentVC?.present(alert, animated: true, completion: nil)
+    }
+}
+
 class ConfigSwitch: UITableViewCell {
     public var control: UISwitch = UISwitch()
     var saveFunc: ((_ state: Bool) -> Void)?
